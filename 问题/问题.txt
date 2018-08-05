@@ -1,0 +1,83 @@
+1、
+同一页面下处理增删改查功能：
+
+
+
+
+
+
+2、
+图片存储：文件+路径存储数据库
+
+
+
+
+
+3、
+加权系数：付款金额=基础价格*加权系数
+
+
+
+4、
+店长可生成账号
+
+
+5、客户账户=卡号
+
+
+6、报错：
+Refused to apply style from 'http://localhost:3000/assets/styles/custom-style.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+
+解决：将自己写的CSS放到外部引入CSS同一目录下
+
+
+7、
+员工信息按照在职和离职进行分离展示
+
+
+
+8、
+bottstrap中<i>标签同时为斜体以及图标标签
+使用按钮时尽量将文字写到i标签外，防止出现斜体
+
+
+
+9、
+列表显示编号不用主键，直接按顺序显示1，2，3，4，5........
+
+10、手机端列表显示不下，处理方法：
+①手机端隐藏多余列
+②手机端使用滚动条，要先把table放到一个div中，控制overflow属性为scroll：
+
+<div style="overflow:scroll;">  
+    ...  
+</div>  
+
+table设置最小长度：
+
+<table class="table" style="min-width:1500px;">  
+    ...  
+</table>  
+
+
+11、Echart图标插件自适应问题：
+在setOption之后：
+
+myChart1.setOption(option); 
+myChart2.setOption(option); 
+myChart3.setOption(option); 
+
+//设置对应图表自适应移动端
+    window.addEventListener("resize", function () {
+        myChart1.resize();
+        myChart2.resize();
+	myChart3.resize()
+    });
+
+
+
+12、JS代码bug处理：检查对象名是否打错，F12查看具体报错
+
+
+
+13、表单提交问题：form标签下是否有table标签

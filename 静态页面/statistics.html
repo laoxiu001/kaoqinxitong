@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发型工作室-统计盈收</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/datatables/dataTables.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="util/AdminLTE/dist/css/adminlte.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/daterangepicker/daterangepicker-bs3.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="util/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- 主CSS -->
+    <link rel="stylesheet" type="text/css" href="util/css/main.css">
+    <!-- 公共类CSS -->
+    <link rel="stylesheet" type="text/css" href="util/css/public.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- 头部 -->
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">早上好，用户小黑</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-sign-out"></i> 用户注销
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item" data-toggle="modal" data-target="#changePassword">
+                        <i class="fa fa-address-card"></i> 修改密码
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+                        class="fa fa-th-large"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 修改密码遮罩层（模态框） -->
+    <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">修改密码</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal" onsubmit="return changePassword()">
+                        <table>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="" class="">旧密码</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password" placeholder="请输入当前密码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="">新密码</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="newPassword_1" placeholder="请输入新密码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="">确认密码</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="newPassword_2" placeholder="请确认新密码">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="modal-footer">
+                                <span style="color: red;" id="span_password"></span>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="submit" id="change" class="btn btn-primary">提交更改</button>
+                            </div>
+                        </table>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- 头部 -->
+
+    <!-- 侧边栏 -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="index3.html" class="brand-link">
+            <img src="util/AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">雷格发型工作室</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="util/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">Alexander Pierce</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-header">客户</li>
+                    <li class="nav-item">
+                        <a href="customer.html" class="nav-link">
+                            <i class="nav-icon fa fa-user"></i>
+                            <p>
+                                客户信息管理
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pay.html" class="nav-link">
+                            <i class="nav-icon fa fa-credit-card"></i>
+                            <p>
+                                客户充值
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="service.html" class="nav-link">
+                            <i class="nav-icon fa fa-bars"></i>
+                            <p>
+                                客户服务结算
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">员工</li>
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-users"></i>
+                            <p>
+                                员工管理
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="employType.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>员工类型管理</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="employeeManage.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>员工信息管理</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">服务</li>
+                    <li class="nav-item">
+                        <a href="serviceItem.html" class="nav-link">
+                            <i class="nav-icon fa fa-print"></i>
+                            <p>
+                                服务项目管理
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">统计</li>
+                    <li class="nav-item">
+                        <a href="salary.html" class="nav-link">
+                            <i class="nav-icon fa fa-calendar"></i>
+                            <p>
+                                统计工资结算
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="statistics.html" class="nav-link active">
+                            <i class="nav-icon fa fa-usd"></i>
+                            <p>
+                                统计盈收
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="totalExpenses.html" class="nav-link">
+                            <i class="nav-icon fa fa-usd"></i>
+                            <p>
+                                支出项目统计
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+    <!-- 侧边栏 -->
+
+    <!-- 主体内容 -->
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>统计盈收</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">统计</a></li>
+                            <li class="breadcrumb-item active">统计盈收</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 pull-left">
+                            <form action="" role="form" class="">
+                                <table>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label>请选择要查询的年份: </label>
+                                            <select class="form-control">
+                                                <option selected="selected" value="">2018</option>
+                                                <option>2017</option>
+                                                <option>2016</option>
+                                                <option>2015</option>
+                                                <option>2014</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-sm-12 col-xs-12">
+                                            <label>请选择开始月份: </label>
+                                            <select class="form-control">
+                                                <option selected="selected" value="">1月</option>
+                                                <option>2月</option>
+                                                <option>3月</option>
+                                                <option>4月</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-sm-12 col-xs-12">
+                                            <label>请选择结束月份: </label>
+                                            <select class="form-control">
+                                                <option value="">6月</option>
+                                                <option>7月</option>
+                                                <option>8月</option>
+                                                <option>9月</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-12 col-xs-12">
+                                            <button class="btn btn-info form-control" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                </table>
+                            </form>
+                            <!--  1根据所选择的年份，统计本年的总收入变化和总支出变化（柱状图） -->
+                            <div id="a" style="width:100%;height:400px;"></div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 pull-left">
+                            <form action="" role="form" class="">
+                                <table>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label>请选择要查询的年份: </label>
+                                            <select class="form-control">
+                                                <option selected="selected" value="">2018</option>
+                                                <option>2017</option>
+                                                <option>2016</option>
+                                                <option>2015</option>
+                                                <option>2014</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-sm-12 col-xs-12">
+                                            <label>请选择开始月份: </label>
+                                            <select class="form-control">
+                                                <option selected="selected" value="">1月</option>
+                                                <option>2月</option>
+                                                <option>3月</option>
+                                                <option>4月</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-sm-12 col-xs-12">
+                                            <label>请选择结束月份: </label>
+                                            <select class="form-control">
+                                                <option value="">6月</option>
+                                                <option>7月</option>
+                                                <option>8月</option>
+                                                <option>9月</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-12 col-xs-12">
+                                            <button class="btn btn-info form-control" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                </table>
+                            </form>
+                            <!--  2根据所选择的起始月份和结束月份，按月统计总收入变化和总支出变化（柱状图） -->
+                            <div id="b" style="width:100%;height:400px;"></div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 pull-left">
+                            <form action="" role="form" class="">
+                                <table>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>请选择要查询的年份: </label>
+                                            <select class="form-control">
+                                                <option selected="selected" value="">2018</option>
+                                                <option>2017</option>
+                                                <option>2016</option>
+                                                <option>2015</option>
+                                                <option>2014</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-sm-12 col-xs-12">
+                                            <label>请选择服务项目: </label>
+                                            <select class="form-control">
+                                                <option value="">6月</option>
+                                                <option>7月</option>
+                                                <option>8月</option>
+                                                <option>9月</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-12 col-xs-12">
+                                            <button class="btn btn-info form-control" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                </table>
+                            </form>
+                            <!--  3根据所选择的年份和某一服务项目，按月统计该项目本年的总收入变化（折线图） -->
+                            <div id="c" style="width:100%;height:400px;"></div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 pull-left">
+                            <form action="" role="form" class="">
+                                <table>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>请选择要查询的年份: </label>
+                                            <select class="form-control">
+                                                <option selected="selected" value="">2018</option>
+                                                <option>2017</option>
+                                                <option>2016</option>
+                                                <option>2015</option>
+                                                <option>2014</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-sm-12 col-xs-12">
+                                            <label>请输入员工工号: </label>
+                                            <input type="text" class="form-control" placeholder="请输入员工工号">
+                                        </div>
+                                        <div class="form-group col-sm-12 col-xs-12">
+                                            <button class="btn btn-info form-control" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                </table>
+                            </form>
+                            <!--  4根据所选择的年份和某一员工，按月统计该员工本年创造的业绩和工资变化（柱状图） -->
+                            <div id="d" style="width:100%;height:400px;"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 主体内容 -->
+
+    <!--底部版权信息-->
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2018-05-03 <a href="https://coding.net/u/leige123321/p/HairCut/git?public=true">项目主页</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>雷格</b> 发型工作室
+        </div>
+    </footer>
+    <!--底部版权信息-->
+
+</div>
+
+<!-- jQuery -->
+<script src="util/AdminLTE/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="util/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="util/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="util/AdminLTE/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="util/AdminLTE/plugins/morris/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="util/AdminLTE/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="util/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="util/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="util/AdminLTE/plugins/knob/jquery.knob.js"></script>
+<!-- daterangepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<script src="util/AdminLTE/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="util/AdminLTE/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="util/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="util/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="util/AdminLTE/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="util/AdminLTE/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="util/AdminLTE/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="util/AdminLTE/dist/js/demo.js"></script>
+<!-- Echarts -->
+<script src="util/echart/echarts.min.js"></script>
+<script type="text/javascript">
+
+    //修改密码表单验证
+    function changePassword() {
+        var oldPassword = document.getElementById('password').value;
+        var newPassword_1 = document.getElementById('newPassword_1').value;
+        var newPassword_2 = document.getElementById('newPassword_2').value;
+        if (oldPassword == ""){
+            document.getElementById("span_password").innerHTML='请输入当前密码';
+            return false;
+        }else if (newPassword_1 == ""){
+            document.getElementById("span_password").innerHTML='请输入新密码';
+            return false;
+        }else if (newPassword_2 == ""){
+            document.getElementById("span_password").innerHTML='请输入确认密码';
+            return false;
+        }else if (newPassword_1 != newPassword_2){
+            document.getElementById("span_password").innerHTML='新密码和确认密码不一致';
+            return false;
+        }
+        return true;
+    }
+
+    // 根据所选择的年份，统计本年的总收入变化和总支出变化（柱状图）
+    var myCharta = echarts.init(document.getElementById('a'));
+    //配置
+    option = {
+        title : {
+            text: '2018年各月份总收入和总支出',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['总收入','总支出'],
+            left:'250',
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'总收入',
+                type:'bar',
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name:'总支出',
+                type:'bar',
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint : {
+                    data : [
+                        {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                        {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name : '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myCharta.setOption(option);
+
+
+
+
+    // 根据所选择的起始月份和结束月份，按月统计总收入变化和总支出变化（柱状图）
+    var myChartb = echarts.init(document.getElementById('b'));
+    //配置
+    option = {
+        title : {
+            text: '2018年6月-7月总收入和总支出',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['总收入','总支出'],
+            left:'260',
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'总收入',
+                type:'bar',
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name:'总支出',
+                type:'bar',
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint : {
+                    data : [
+                        {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                        {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name : '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChartb.setOption(option);
+
+
+
+
+    // 根据所选择的年份和某一服务项目，按月统计该项目本年的总收入变化（折线图）
+    var myChartc = echarts.init(document.getElementById('c'));
+    //配置
+    option = {
+        title : {
+            text: '2018年烫发总收入变化',
+        },
+        xAxis: {
+            type: 'category',
+            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        series: [{
+            data: [820, 932, 901, 934, 1290, 1330, 1320,800,684,759,995,1230],
+            type: 'line'
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChartc.setOption(option);
+
+
+
+
+    // 根据所选择的年份和某一员工，按月统计该员工本年创造的业绩和工资变化（柱状图）
+    var myChartd = echarts.init(document.getElementById('d'));
+    //配置
+    option = {
+        title : {
+            text: '2018年朱自清业绩和工资',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['业绩','工资'],
+            left:'210',
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'业绩',
+                type:'bar',
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name:'工资',
+                type:'bar',
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint : {
+                    data : [
+                        {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                        {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name : '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChartd.setOption(option);
+
+
+    //设置对应图表自适应移动端
+    window.addEventListener("resize", function () {
+        myCharta.resize();
+        myChartb.resize()
+        myChartc.resize()
+        myChartd.resize()
+    });
+</script>
+</body>
+</html>
