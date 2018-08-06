@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+
+<![endif]-->
+<!--[if IE 7]>
+
+<html class="lt-ie9 lt-ie8" lang="en">
+
+<![endif]-->
+<!--[if IE 8]>
+
+<html class="lt-ie9" lang="en">
+
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+
+<html lang="en">
+  
+  <!--
+<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Blue Moon - Responsive Admin Dashboard
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    
+    <link href="icomoon/style.css" rel="stylesheet">
+    <!--[if lte IE 7]>
+    <script src="css/icomoon-font/lte-ie7.js">
+    </script>
+    <![endif]-->
+  <link href="css/main.css" rel="stylesheet"> <!-- Important. For Theming change primary-color variable in main.css  -->
+  
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="Logo" />
+      </a>
+      <div class="btn-group">
+        <button class="btn btn-primary">
+          Srinu Baswa
+        </button>
+        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+          <span class="caret">
+          </span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+          <li>
+            <a href="#">
+              Edit Profile
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Account Settings
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+      <ul class="mini-nav">
+        <li>
+          <a href="#">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe040;"></div>
+            <span class="info-label badge badge-warning">
+              3
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe04c;"></div>
+            <span class="info-label badge badge-info">
+              5
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe037;"></div>
+            <span class="info-label badge badge-success">
+              9
+            </span>
+          </a>
+        </li>
+      </ul>
+    </header>
+    <div class="container-fluid">
+      <div class="dashboard-container">
+        <div class="top-nav">
+          <ul>
+            <li>
+              <a href="index.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="forms.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe0b8;"></div>
+                Forms
+              </a>
+            </li>
+            <li>
+              <a href="graphs.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe096;"></div>
+                Graphs
+              </a>
+            </li>
+            <li>
+              <a href="ui-elements.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe0d2;"></div>
+                UI Elements
+              </a>
+            </li>
+            <li>
+              <a href="icons.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
+                Icons
+              </a>
+            </li>
+            <li>
+              <a href="tables.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe14a;"></div>
+                Tables
+              </a>
+            </li>
+            <li>
+              <a href="media.html" class="selected">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe00d;"></div>
+                Media
+              </a>
+            </li>
+            <li>
+              <a href="calendar.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe052;"></div>
+                Calendar
+              </a>
+            </li>
+            <li>
+              <a href="typography.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe100;"></div>
+                Typography
+              </a>
+            </li>
+            <li>
+              <a href="edit-profile.html">
+                <div class="fs1" aria-hidden="true" data-icon="&#xe0aa;"></div>
+                Extras
+              </a>
+            </li>
+          </ul>
+          <div class="clearfix">
+          </div>
+        </div>
+        <div class="sub-nav">
+          <ul>
+            <li><a href="" class="heading">Media</a></li>
+            <li>
+              <a href="#" class="selected">
+                Thumbnail Gallery
+              </a>
+            </li>
+            <li>
+              <a href="#defaultThumbnails">
+                Default Thumbnails
+              </a>
+            </li>
+            <li>
+              <a href="#highlyCustomizable">
+                Highly Customizable
+              </a>
+            </li>
+            <li>
+              <a href="#moreExamples">
+                More Examples
+              </a>
+            </li>
+          </ul>
+          <div class="btn-group pull-right">
+            <button class="btn btn-primary">
+              Main Menu
+            </button>
+            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="index.html" data-original-title="">
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="forms.html" data-original-title="">
+                  Forms
+                </a>
+              </li>
+              <li>
+                <a href="graphs.html" data-original-title="">
+                  Graphs
+                </a>
+              </li>
+              <li>
+                <a href="ui-elements.html" data-original-title="">
+                  UI Elements
+                </a>
+              </li>
+              <li>
+                <a href="icons.html" data-original-title="">
+                  Icons
+                </a>
+              </li>
+              <li>
+                <a href="tables.html" data-original-title="">
+                  Tables
+                </a>
+              </li>
+              <li>
+                <a href="media.html" data-original-title="">
+                  Media
+                </a>
+              </li>
+              <li>
+                <a href="calendar.html" data-original-title="">
+                  Calendar
+                </a>
+              </li>
+              <li>
+                <a href="typography.html" data-original-title="">
+                  Typography
+                </a>
+              </li>
+              <li>
+                <a href="edit-profile.html" data-original-title="">
+                  Edit Profile
+                </a>
+              </li>
+              <li>
+                <a href="invoice.html" data-original-title="">
+                  Invoice
+                </a>
+              </li>
+              <li>
+                <a href="login.html" data-original-title="">
+                  Login
+                </a>
+              </li>
+              <li>
+                <a href="404.html" data-original-title="">
+                  404 Page
+                </a>
+              </li>
+              <li>
+                <a href="500.html" data-original-title="">
+                  500 Page
+                </a>
+              </li>
+              <li>
+                <a href="help.html" data-original-title="">
+                  Help
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="dashboard-wrapper">
+          
+          
+          <div class="left-sidebar">
+            <div class="row-fluid">
+              <div class="span12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Thumbnail gallery
+                    </div>
+                    <span class="tools">
+                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/1.jpg" title="Big Buddha">
+                        <img src="img/1.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/2.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/2.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/3.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/3.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/4.jpg" title="Phi Phi Island">
+                        <img src="img/4.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/1.jpg" title="Big Buddha">
+                        <img src="img/1.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/2.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/2.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/3.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/3.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/4.jpg" title="Phi Phi Island">
+                        <img src="img/4.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/1.jpg" title="Big Buddha">
+                        <img src="img/1.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/2.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/2.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/3.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/3.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/4.jpg" title="Phi Phi Island">
+                        <img src="img/4.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/1.jpg" title="Big Buddha">
+                        <img src="img/1.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/2.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/2.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/3.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/3.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/4.jpg" title="Phi Phi Island">
+                        <img src="img/4.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/1.jpg" title="Big Buddha">
+                        <img src="img/1.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/2.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/2.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/3.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/3.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/4.jpg" title="Phi Phi Island">
+                        <img src="img/4.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/1.jpg" title="Big Buddha">
+                        <img src="img/1.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/2.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/2.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/3.jpg" title="Sriracha Tiger Zoo">
+                        <img src="img/3.jpg">
+                      </a>
+                      <a class="thumbnail-img" data-gallery="gallery" href="img/4.jpg" title="Phi Phi Island">
+                        <img src="img/4.jpg">
+                      </a>
+                      
+                      
+                      
+                      
+                    </div>
+                    
+                    <!-- modal-gallery is the modal dialog used for the image gallery -->
+                    <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
+                      <div class="modal-header">
+                        <a class="close" data-dismiss="modal">
+                          &times;
+                        </a>
+                        <h5 class="modal-title">
+                        </h5>
+                      </div>
+                      <div class="modal-body">
+                        <div class="modal-image">
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        
+                        <div class="btn-toolbar pull-left no-margin">
+                          <div class="btn-group">
+                            <a href="#" class="btn btn-success" data-original-title="">
+                              <span class="fs1" aria-hidden="true" data-icon="&#xe0d4;"></span>
+                            </a>
+                            <a href="#" class="btn btn-warning2" data-original-title="">
+                              <span class="fs1" aria-hidden="true" data-icon="&#xe0d5;"></span>
+                            </a>
+                            <a href="#" class="btn btn-warning modal-download" data-original-title="" target="_blank">
+                              <span class="fs1" aria-hidden="true" data-icon="&#xe0bd;"></span>
+                            </a>
+                          </div>
+                        </div>
+                        
+                        <div class="btn-toolbar pull-right no-margin">
+                          <div class="btn-group">
+                            <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+                              <i class="icon-play icon-white"></i>
+                              <span>
+                                Slideshow
+                              </span>
+                            </a>
+                            <a class="btn btn-info modal-prev">
+                              <i class="icon-arrow-left icon-white">
+                              </i>
+                            </a>
+                            <a class="btn btn-info modal-next">
+                              <i class="icon-arrow-right icon-white">
+                              </i>
+                            </a>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <div class="row-fluid">
+              <div class="span12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Default thumbnails
+                      <span class="mini-title">
+                        <a id="defaultThumbnails">2</a>60 * 80
+                      </span>
+                    </div>
+                    <span class="tools">
+                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <ul class="thumbnails">
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img alt="260x180" style="width: 260px; height: 180px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img alt="260x180" style="width: 260px; height: 180px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img alt="260x180" style="width: 260px; height: 180px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img alt="260x180" style="width: 260px; height: 180px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row-fluid">
+              <div class="span12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      <a id="highlyCustomizable">H</a>ighly customizable
+                    </div>
+                    <span class="tools">
+                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <ul class="thumbnails">
+                      <li class="span4">
+                        <div class="thumbnail">
+                          <img alt="300x200" style="width: 300px; height: 200px;" src="img/saturation.png">
+                          <div class="caption">
+                            <h3>
+                              Thumbnail label
+                            </h3>
+                            <p>
+                              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                            <p>
+                              <a href="#" class="btn btn-info">
+                                Action
+                              </a>
+                              
+                              <a href="#" class="btn">
+                                Action
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="span4">
+                        <div class="thumbnail">
+                          <img alt="300x200" style="width: 300px; height: 200px;" src="img/saturation.png">
+                          <div class="caption">
+                            <h3>
+                              Thumbnail label
+                            </h3>
+                            <p>
+                              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                            <p>
+                              <a href="#" class="btn btn-info">
+                                Action
+                              </a>
+                              
+                              <a href="#" class="btn">
+                                Action
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="span4">
+                        <div class="thumbnail">
+                          <img alt="300x200" style="width: 300px; height: 200px;" src="img/saturation.png">
+                          <div class="caption">
+                            <h3>
+                              Thumbnail label
+                            </h3>
+                            <p>
+                              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                            <p>
+                              <a href="#" class="btn btn-info">
+                                Action
+                              </a>
+                              
+                              <a href="#" class="btn">
+                                Action
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row-fluid">
+              <div class="span12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      <a id="moreExamples">M</a>ore examples
+                    </div>
+                    <span class="tools">
+                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <ul class="thumbnails">
+                      <li class="span4">
+                        <a href="#" class="thumbnail">
+                          <img data-src="holder.js/360x270" alt="360x270" style="width: 360px; height: 270px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img data-src="holder.js/260x120" alt="260x120" style="width: 260px; height: 120px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span2">
+                        <a href="#" class="thumbnail">
+                          <img data-src="holder.js/160x120" alt="160x120" style="width: 160px; height: 120px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img data-src="holder.js/260x120" alt="260x120" style="width: 260px; height: 120px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img data-src="holder.js/260x120" alt="260x120" style="width: 260px; height: 120px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span2">
+                        <a href="#" class="thumbnail">
+                          <img data-src="holder.js/160x120" alt="160x120" style="width: 160px; height: 120px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                      <li class="span3">
+                        <a href="#" class="thumbnail">
+                          <img data-src="holder.js/260x120" alt="260x120" style="width: 260px; height: 120px;" src="img/saturation.png">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="right-sidebar">
+            
+            
+            <div class="wrapper">
+              
+              <a href="#myModal" role="button" class="btn btn-large btn-warning2 btn-block" data-toggle="modal">
+                Launch demo modal
+              </a>
+              
+              <!-- Modal -->
+              <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                  </button>
+                  <h3 id="myModalLabel">
+                    Modal header
+                  </h3>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    One fine body�?
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn" data-dismiss="modal" aria-hidden="true">
+                    Close
+                  </button>
+                  <button class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+              
+            </div>
+            
+            <div class="wrapper">
+              <button class="btn btn-large btn-info btn-block" type="button">
+                Large button
+              </button>
+              <button class="btn btn-warning btn-block" type="button">
+                Default button
+              </button>
+              <button class="btn btn-small btn-success btn-block" type="button">
+                Small button
+              </button>
+              <button class="btn btn-small btn-warning2 btn-block" type="button">
+                Small button
+              </button>
+              <button class="btn btn-mini btn-primary btn-block" type="button">
+                Mini button
+              </button>
+              <button class="btn btn-small btn-inverse btn-block" type="button">
+                Small button
+              </button>
+              <button class="btn btn-small btn-block" type="button">
+                Small button
+              </button>
+              <a href="#" class="btn btn-mini btn-warning2 disabled btn-block">
+                Primary link disabled
+              </a>
+              <a href="#" class="btn btn-mini disabled btn-block">
+                Link disabled
+              </a>
+            </div>
+            
+            <div class="wrapper">
+              <button class="btn btn-block btn-info" type="button">
+                Block level button
+              </button>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+      <!--/.fluid-container-->
+    </div>
+    <footer>
+      <p>
+        &copy; baswaAdmin 2014
+      </p>
+    </footer>
+    <script src="js/jquery.min.js">
+    </script>
+    <script src="js/bootstrap.js">
+    </script>
+    <script src="js/jquery.scrollUp.js">
+    </script>
+    <script src="js/load-image.min.js">
+    </script>
+    <script src="js/bootstrap-image-gallery.js">
+    </script>
+    <script src="js/bootstrap-image-gallery-main.js">
+    </script>
+    
+    <script type="text/javascript">
+      //ScrollUp
+      $(function () {
+        $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '300', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 400, // Animation in speed (ms)
+          animationOutSpeed: 400, // Animation out speed (ms)
+          scrollText: 'Scroll to top', // Text for element
+          activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+      });
+
+      //Tooltip
+      $('a').tooltip('hide');
+    </script>
+    
+  
+</body>
+</html>

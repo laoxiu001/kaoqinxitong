@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+
+<![endif]-->
+<!--[if IE 7]>
+
+<html class="lt-ie9 lt-ie8" lang="en">
+
+<![endif]-->
+<!--[if IE 8]>
+
+<html class="lt-ie9" lang="en">
+
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+
+<html lang="en">
+
+<!--
+<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>
+    考勤系统-打卡测试
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- bootstrap css -->
+
+  <link href="icomoon/style.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet"> <!-- Important. For Theming change primary-color variable in main.css  -->
+  <link href="css/alertify.core.css" rel="stylesheet" id="toggleCSS">
+  <!--[if lte IE 7]>
+  <script src="css/icomoon-font/lte-ie7.js">
+  </script>
+  <![endif]-->
+
+</head>
+<body onload="message();">
+<!-- 头部状态栏 start -->
+<header>
+  <a href="#" class="logo">
+    <img src="img/logo.png" alt="Logo"/>
+  </a>
+  <div class="btn-group">
+    <button class="btn btn-primary">
+      早上好，admin ！
+    </button>
+    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+          <span class="caret">
+          </span>
+    </button>
+    <ul class="dropdown-menu pull-right">
+      <li>
+        <a href="#myModal" role="button" data-toggle="modal">
+          修改密码
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          注销账户
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+<!-- 头部状态栏 end -->
+<!-- 主体内容 start -->
+<div class="container-fluid">
+  <div class="dashboard-container">
+    <!--头部主导航栏-->
+    <div class="top-nav">
+      <ul>
+        <li>
+          <a href="punch.html" class="selected">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+            打卡测试
+          </a>
+        </li>
+        <li>
+          <a href="employeeManage.html">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe072;"></div>
+            员工信息
+          </a>
+        </li>
+        <li>
+          <a href="shift.html">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe077;"></div>
+            排班设置
+          </a>
+        </li>
+        <li>
+          <a href="department.html">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
+            部门信息
+          </a>
+        </li>
+        <li>
+          <a href="position.html">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe073;"></div>
+            职位管理
+          </a>
+        </li>
+        <li>
+          <a href="leave.html">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe0e4;"></div>
+            请假类别
+          </a>
+        </li>
+        <li>
+          <a href="attence.html">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe096;"></div>
+            考勤管理
+          </a>
+        </li>
+      </ul>
+      <div class="clearfix">
+      </div>
+    </div>
+    <!--头部副导航栏-->
+    <div class="sub-nav">
+      <ul>
+        <li><a href="login.html" class="heading">登陆</a></li>
+        <li>
+          <a href="login.html" >
+            登陆
+          </a>
+        </li>
+        <li>
+          <a href="login.html" >
+            忘记密码
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="dashboard-wrapper">
+      <div class="left-sidebar">
+
+        <div class="row-fluid">
+
+          <div class="span12">
+            <div class="widget">
+              <div class="widget-header">
+                <div class="title">
+                  登陆
+                </div>
+                <span class="tools">
+                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                    </span>
+              </div>
+              <div class="widget-body">
+                <div class="span3"></div>
+                <div class="span6">
+                  <div class="sign-in-container">
+                    <!-- 登陆框 -->
+                    <form action="#" class="login-wrapper" method="post">
+                      <div class="header">
+                        <div class="row-fluid">
+                          <div class="span12">
+                            <h3>用户登录<img src="img/logo1.png" alt="Logo" class="pull-right"></h3>
+                            <p>登陆成功后方可访问后台页面</p>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="content">
+                        <div class="row-fluid">
+                          <div class="span12">
+                            <input class="span12 email" name="" placeholder="请输入手机号" required="required" type="text" value="">
+                          </div>
+                        </div>
+                        <div class="row-fluid">
+                          <div class="span12">
+                            <input class="span12 password" name="" placeholder="请输入密码" required="required" type="password">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="actions">
+                        <input class="btn btn-danger" name="Login" type="submit" value="登陆" >
+                        <a class="link" href="#">忘记密码</a>
+                        <div class="clearfix"></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="span3"></div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <!-- 右边员工预览 -->
+      <div class="right-sidebar">
+        <div class="wrapper">
+          <ul class="stats">
+            <li>
+              <div class="metro-nav-block nav-block-yellow current">
+                <a href="#">
+                  <div class="brand">
+                    <div class="pull-left fs1" aria-hidden="true" data-icon=""></div>
+                    <p class="pull-left">&nbsp;部门员工数：</p>
+                    <h3 class="pull-right">15,859</h3>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="metro-nav-block nav-block-yellow current">
+                <a href="#">
+                  <div class="brand">
+                    <div class="pull-left fs1" aria-hidden="true" data-icon=""></div>
+                    <p class="pull-left">&nbsp;今日应到人数：</p>
+                    <h3 class="pull-right">15,857</h3>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="metro-nav-block nav-block-yellow current">
+                <a href="#">
+                  <div class="brand">
+                    <div class="pull-left fs1" aria-hidden="true" data-icon=""></div>
+                    <p class="pull-left">&nbsp;今日实到人数：</p>
+                    <h3 class="pull-right">15,853</h3>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="metro-nav-block nav-block-yellow current">
+                <a href="#">
+                  <div class="brand">
+                    <div class="pull-left fs1" aria-hidden="true" data-icon=""></div>
+                    <p class="pull-left">&nbsp;请假人数：</p>
+                    <h3 class="pull-right">2</h3>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="metro-nav-block nav-block-yellow current">
+                <a href="#">
+                  <div class="brand">
+                    <div class="pull-left fs1" aria-hidden="true" data-icon=""></div>
+                    <p class="pull-left">&nbsp;缺勤人数：</p>
+                    <h3 class="pull-right">4</h3>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!--/.fluid-container-->
+</div>
+<!-- 主体内容 end -->
+<!-- 修改密码模态框 start -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+      ×
+    </button>
+    <h3 id="myModalLabel">
+      <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
+      修改密码
+    </h3>
+  </div>
+  <form class="form-horizontal no-margin" onsubmit="return changePassword()">
+    <table>
+      <div class="modal-body">
+        <div class="tab-content" id="myTabContent">
+          <div id="step1" class="tab-pane fade active in">
+
+            <div class="control-group">
+              <label class="control-label" for="password">
+                当前密码
+              </label>
+              <div class="controls">
+                <input type="password" id="password" placeholder="请输入当前密码" onkeyup="changePassword()">
+                <span style="color: red;" id="span_password"></span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="newPassword_1">
+                修改密码
+              </label>
+              <div class="controls">
+                <input type="password" id="newPassword_1" placeholder="请输入要修改的密码" onkeyup="changePassword()">
+                <span style="color: red;" id="span_newPassword_1"></span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="newPassword_2">
+                确认密码
+              </label>
+              <div class="controls">
+                <input type="password" id="newPassword_2" placeholder="请确认要修改的密码" onkeyup="changePassword()">
+                <span style="color: red;" id="span_newPassword_2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="submit">
+          提交
+        </button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+          关闭
+        </button>
+      </div>
+    </table>
+  </form>
+</div>
+<!-- 修改密码模态框 end -->
+<!-- 底部footer start -->
+<footer>
+  <p>
+    &copy; 雷格SS Copyright 2018 Powered by Bootstrap! F1.0  备：沪ICP备41749849号-3
+  </p>
+</footer>
+<!-- 底部footer end -->
+
+
+<script src="js/jquery.min.js">
+</script>
+<script src="js/bootstrap.js">
+</script>
+<script type="text/javascript" src="js/alertify.min.js">
+</script>
+<script type="text/javascript" src="js/main.js">
+</script>
+</body>
+</html>
