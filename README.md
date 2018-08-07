@@ -18,7 +18,7 @@
 
 使用技术：
 ---------
-前端：HTML + AdminLTE + Bootstrap + BootstrapACE + JQuery<br>
+前端：HTML + baswaAdmin + Bootstrap + BootstrapACE + JQuery<br>
 后端：Java<br>
 
 作者：HJL
