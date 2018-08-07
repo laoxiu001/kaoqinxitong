@@ -126,13 +126,8 @@
       <ul>
         <li><a href="#" class="heading">员工信息</a></li>
         <li>
-          <a href="#search" >
-            查询员工
-          </a>
-        </li>
-        <li>
-          <a href="#punch" >
-            员工打卡
+          <a href="#list" >
+            员工列表
           </a>
         </li>
       </ul>
@@ -143,125 +138,262 @@
         <div class="row-fluid">
 
           <div class="span12">
-            <!-- 查询员工 -->
-            <div class="widget">
-              <div class="widget-header" id="search">
-                <div class="title">
-                  查询员工
-                </div>
-                <span class="tools">
-                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
-                    </span>
-              </div>
-              <div class="widget-body">
-                <div class="span1"></div>
-                <div class="span10">
-                  <div class="sign-in-container">
-                    <!-- 员工信息查询输入框 -->
-                    <form class="form-horizontal span12" onsubmit="return punch_search()">
-                      <table>
-                        <div class="control-group">
-                          <label class="control-label">
-                            员工工号：
-                          </label>
-                          <div class="controls">
-                            <div class="input-append">
-                              <input type="text" placeholder="请输入员工工号" id="search_number" name="" onkeyup="punch_search()">
-                              <input class="btn btn-danger" type="submit" value="查询" >
-                            </div>
-                          </div>
-                          <div class="controls">
-                            <span style="color: red;" id="span_search"></span>
-                          </div>
-                        </div>
-                      </table>
-                    </form>
-                  </div>
-                </div>
-                <div class="span1"></div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
             <!-- 员工信息 -->
             <div class="widget">
-              <div class="widget-header" id="punch">
+              <div class="widget-header">
                 <div class="title">
-                  员工信息
+                  员工列表
                 </div>
                 <span class="tools">
-                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                      <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
                     </span>
               </div>
               <div class="widget-body">
-                <div class="span1"></div>
-                <div class="span10">
-                  <div class="sign-in-container">
-                    <!-- 员工信息查询输入框 -->
-                    <form action="#" class="form-horizontal span12" method="post" onsubmit="return punch()">
-                      <div class="span8">
-                        <div class="control-group">
-                          <label class="control-label">
-                            员工工号：
-                          </label>
-                          <div class="controls controls-row">
-                            <input class="span6" id="inf_number" type="text" value="015864" readonly>
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label">
-                            员工姓名：
-                          </label>
-                          <div class="controls controls-row">
-                            <input class="span6" type="text" value="王梓清" readonly>
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label">
-                            手机号：
-                          </label>
-                          <div class="controls controls-row">
-                            <input class="span6" type="text" value="15756487542" readonly>
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label">
-                            所属部门：
-                          </label>
-                          <div class="controls controls-row">
-                            <input class="span6" type="text" value="人事部" readonly>
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label">
-                            职位：
-                          </label>
-                          <div class="controls controls-row">
-                            <input class="span6" type="text" value="总经理" readonly>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="span3">
-                        <div class="control-group">
-                          <div class="thumbnail">
-                            <img alt="300x200" src="img/photo.jpg">
-                            <div class="caption">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="span8">
-                        <div class="control-group">
-                          <div class="controls controls-row">
-                            <button class="btn btn-success">打卡</button>
-                            <span style="color: red;" id="span_punch"></span>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
+                <div id="dt_example" class="example_alt_pagination">
+                  <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table" aria-describedby="data-table_info">
+
+                      <thead>
+                      <tr role="row"><th style="width: 186px;" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                              Month
+                            : activate to sort column descending">
+                        Month
+                      </th><th style="width: 220px;" class="sorting" role="columnheader" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="
+                              Internet Explorer
+                            : activate to sort column ascending">
+                        Internet Explorer
+                      </th><th style="width: 174px;" class="sorting" role="columnheader" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="
+                              Firefox
+                            : activate to sort column ascending">
+                        Firefox
+                      </th><th style="width: 174px;" class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="
+                              Chrome
+                            : activate to sort column ascending">
+                        Chrome
+                      </th><th style="width: 174px;" class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="
+                              Safari
+                            : activate to sort column ascending">
+                        Safari
+                      </th><th style="width: 163px;" class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="
+                              Opera
+                            : activate to sort column ascending">
+                        Opera
+                      </th></tr>
+                      </thead>
+
+                      <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="gradeA error odd">
+                        <td class="  sorting_1">
+                          April
+                        </td>
+                        <td class=" ">
+                          18.3 %
+                        </td>
+                        <td class=" ">
+                          35.8 %
+                        </td>
+                        <td class="hidden-phone ">
+                          38.3 %
+                        </td>
+                        <td class="hidden-phone ">
+                          4.5 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.3 %
+                        </td>
+                      </tr><tr class="gradeA even">
+                        <td class="  sorting_1">
+                          April
+                        </td>
+                        <td class=" ">
+                          24.3 %
+                        </td>
+                        <td class=" ">
+                          42.9 %
+                        </td>
+                        <td class="hidden-phone ">
+                          25.6 %
+                        </td>
+                        <td class="hidden-phone ">
+                          4.1 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.6 %
+                        </td>
+                      </tr><tr class="gradeA success odd">
+                        <td class="  sorting_1">
+                          April
+                        </td>
+                        <td class=" ">
+                          33.4 %
+                        </td>
+                        <td class=" ">
+                          46.4 %
+                        </td>
+                        <td class="hidden-phone ">
+                          13.6 %
+                        </td>
+                        <td class="hidden-phone ">
+                          3.7 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.2 %
+                        </td>
+                      </tr><tr class="gradeA even">
+                        <td class="  sorting_1">
+                          April
+                        </td>
+                        <td class=" ">
+                          33.4 %
+                        </td>
+                        <td class=" ">
+                          46.4 %
+                        </td>
+                        <td class="hidden-phone ">
+                          13.6 %
+                        </td>
+                        <td class="hidden-phone ">
+                          3.7 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.2 %
+                        </td>
+                      </tr><tr class="gradeA success odd">
+                        <td class="  sorting_1">
+                          April
+                        </td>
+                        <td class=" ">
+                          33.4 %
+                        </td>
+                        <td class=" ">
+                          46.4 %
+                        </td>
+                        <td class="hidden-phone ">
+                          13.6 %
+                        </td>
+                        <td class="hidden-phone ">
+                          3.7 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.2 %
+                        </td>
+                      </tr><tr class="gradeA warning even">
+                        <td class="  sorting_1">
+                          August
+                        </td>
+                        <td class=" ">
+                          16.2 %
+                        </td>
+                        <td class=" ">
+                          32.8 %
+                        </td>
+                        <td class="hidden-phone ">
+                          43.7 %
+                        </td>
+                        <td class="hidden-phone ">
+                          4.0 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.2 %
+                        </td>
+                      </tr><tr class="gradeA error odd">
+                        <td class="  sorting_1">
+                          August
+                        </td>
+                        <td class=" ">
+                          22.4 %
+                        </td>
+                        <td class=" ">
+                          40.6 %
+                        </td>
+                        <td class="hidden-phone ">
+                          30.3 %
+                        </td>
+                        <td class="hidden-phone ">
+                          3.8 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.3 %
+                        </td>
+                      </tr><tr class="gradeU info even">
+                        <td class="  sorting_1">
+                          August
+                        </td>
+                        <td class=" ">
+                          30.7 %
+                        </td>
+                        <td class=" ">
+                          45.8 %
+                        </td>
+                        <td class="hidden-phone ">
+                          17.0 %
+                        </td>
+                        <td class="hidden-phone ">
+                          3.5 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.3 %
+                        </td>
+                      </tr><tr class="gradeX warning odd">
+                        <td class="  sorting_1">
+                          December
+                        </td>
+                        <td class=" ">
+                          14.7 %
+                        </td>
+                        <td class=" ">
+                          31.1 %
+                        </td>
+                        <td class="hidden-phone ">
+                          46.9 %
+                        </td>
+                        <td class="hidden-phone ">
+                          4.2 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.1 %
+                        </td>
+                      </tr><tr class="gradeA info even">
+                        <td class="  sorting_1">
+                          December
+                        </td>
+                        <td class=" ">
+                          20.2 %
+                        </td>
+                        <td class=" ">
+                          37.7 %
+                        </td>
+                        <td class="hidden-phone ">
+                          34.6 %
+                        </td>
+                        <td class="hidden-phone ">
+                          4.2 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.5 %
+                        </td>
+                      </tr></tr><tr class="gradeA info even">
+                        <td class="  sorting_1">
+                          December
+                        </td>
+                        <td class=" ">
+                          20.2 %
+                        </td>
+                        <td class=" ">
+                          37.7 %
+                        </td>
+                        <td class="hidden-phone ">
+                          34.6 %
+                        </td>
+                        <td class="hidden-phone ">
+                          4.2 %
+                        </td>
+                        <td class="hidden-phone ">
+                          2.5 %
+                        </td>
+                      </tr></tbody></table>
                   </div>
+                  <div class="clearfix"></div>
                 </div>
-                <div class="span1"></div>
-                <div class="clearfix"></div>
               </div>
             </div>
           </div>
@@ -419,8 +551,20 @@
 </script>
 <script type="text/javascript" src="js/alertify.min.js">
 </script>
+<script src="js/jquery.scrollUp.js">
+</script>
+<script src="js/jquery.dataTables.js">
+</script>
 //主JS代码
 <script type="text/javascript" src="js/main.js">
+</script>
+<script>
+  //Data Tables
+  $(document).ready(function () {
+    $('#data-table').dataTable({
+      "sPaginationType": "full_numbers"
+    });
+  });
 </script>
 </body>
 </html>
