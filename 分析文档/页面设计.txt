@@ -20,14 +20,19 @@
 
 
 部门类：
-部门信息管理（管理员可访问）：department.html
+部门信息管理（超级管理员可访问）：department.html
 	部门信息管理
 部门职位管理：position.html
 	部门职位管理
 
 请假类：
-请假类别管理：leave.html
+*请假记录审核（超级管理员可访问）：leave_record.html
+请假类别管理（超级管理员可访问）：leave.html
 	管理请假类别
+
+杂项类：
+*班次管理:shift.html
+*考勤方式管理：method.html
 
 
 统计类：
