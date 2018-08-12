@@ -3,41 +3,49 @@
 用户登陆：login.html
 	基本的登陆、退出
 密码修改：change.html
-	密码修改功能
 
 
-
-员工类：
 
 打卡测试页面：punch.html
-	测试员工打卡功能
+
+
+
+员工管理：
+
 员工信息管理：employeeManage.html
-	员工信息的增改查
+
 员工详情页面：employeeDetails.html
-	员工详情的展示、员工信息的添加、修改
+
 员工排班设置：shift.html
-	员工上下班的排班设置
+
 
 
 部门类：
 部门信息管理（超级管理员可访问）：department.html
-	部门信息管理
+
 部门职位管理：position.html
-	部门职位管理
 
-请假类：
-*请假记录审核（超级管理员可访问）：leave_record.html
+
+
+请假管理：
+请假记录审核（超级管理员可访问）：leave_record.html
 请假类别管理（超级管理员可访问）：leave.html
-	管理请假类别
 
-杂项类：
+
+班次管理：
 *班次管理:shift.html
-*考勤方式管理：method.html
+*加班申请:overtime.html
+*调班申请:shiftApply.html
+
 
 
 统计类：
 
 考勤数据管理：attence.html
-	员工考勤记录查看
+
+
+杂项类：
+*考勤结果管理：result.html
+*权限管理:permission.html
 
 
