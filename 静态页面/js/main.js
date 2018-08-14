@@ -56,7 +56,6 @@ function message(){
     }
 };
 
-
 //punch.html打卡测试页面JS
 function punch_search() {
     document.getElementById("span_search").innerHTML='';
