@@ -28,14 +28,17 @@
 
 
 请假管理：
-请假记录审核（超级管理员可访问）：leave_record.html
+请假记录审核、补签审核、加班申请（超级管理员可访问）：leave_record.html
 请假类别管理（超级管理员可访问）：leave.html
 
 
 班次管理：
 *班次管理:shift.html
-*加班申请:overtime.html
 *调班申请:shiftApply.html
+
+
+
+
 
 
 

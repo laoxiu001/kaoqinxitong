@@ -4,6 +4,10 @@ function resetPassword () {
     document.getElementById("span_newPassword_1").innerHTML='';
     document.getElementById("span_newPassword_2").innerHTML='';
 };
+//隐藏修改密码模态框时清除span
+$('#myModal').on('hide.bs.modal', function () {
+    resetPassword();
+})
 //修改密码执行表单验证
 function changePassword() {
     resetPassword();
@@ -28,19 +32,11 @@ function changePassword() {
     }
     return true;
 }
-//全局弹出信息
 function reset(){
-    $("toggleCSS").href = "css/alertify.core.css";
-    alertify.set({
-        labels: {
-            ok: "OK",
-            cancel: "Cancel"
-        },
-        delay: 5000,
-        buttonReverse: false,
-        buttonFocus: "ok"
-    });
-};
+    /* 全局定义变量 message */
+    result = 'success';
+    message = '登陆成功';
+}
 function message(){
     /* 全局定义变量 message */
     result = 'success';
@@ -59,6 +55,8 @@ function message(){
         }
     }
 };
+
+
 //punch.html打卡测试页面JS
 function punch_search() {
     document.getElementById("span_search").innerHTML='';
