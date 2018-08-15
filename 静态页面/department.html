@@ -166,7 +166,9 @@
                                 <div id="dt_example" class="example_alt_pagination">
                                     <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
                                         <!-- 添加部门按钮 -->
-                                        <button class="btn btn-primary" href="#edit" data-toggle="modal" onclick="lick(this, this.id)">添加部门</button>
+                                        <button class="btn btn-primary" href="#edit" data-toggle="modal"
+                                                onclick="lick(this, this.id)">添加部门
+                                        </button>
                                         <!-- 部门信息列表 -->
                                         <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
                                                id="data-table1" aria-describedby="data-table_info">
@@ -202,7 +204,9 @@
                                                 <td class="">打卡考勤</td>
                                                 <td class="">1575</td>
                                                 <td class="">
-                                                    <button class="btn btn-primary" href="#edit" data-toggle="modal" onclick="lick(this, this.id)">编辑</button>
+                                                    <button class="btn btn-primary" href="#edit" data-toggle="modal"
+                                                            onclick="lick(this, this.id)">编辑
+                                                    </button>
                                                     <button class="btn btn-danger" id="confirm">删除</button>
                                                 </td>
                                             </tr>
@@ -213,7 +217,9 @@
                                                 <td class="">人工考勤</td>
                                                 <td class="">4524</td>
                                                 <td>
-                                                    <button class="btn btn-primary" href="#edit" data-toggle="modal" onclick="lick(this, this.id)">编辑</button>
+                                                    <button class="btn btn-primary" href="#edit" data-toggle="modal"
+                                                            onclick="lick(this, this.id)">编辑
+                                                    </button>
                                                     <button class="btn btn-danger">删除</button>
                                                 </td>
                                             </tr>
@@ -224,7 +230,9 @@
                                                 <td class="">指纹考勤</td>
                                                 <td class="">120</td>
                                                 <td class="">
-                                                    <button class="btn btn-primary" href="#edit" data-toggle="modal" onclick="lick(this, this.id)">编辑</button>
+                                                    <button class="btn btn-primary" href="#edit" data-toggle="modal"
+                                                            onclick="lick(this, this.id)">编辑
+                                                    </button>
                                                     <button class="btn btn-danger">删除</button>
                                                 </td>
                                             </tr>
@@ -469,6 +477,36 @@
 <script type="text/javascript" src="js/main.js">
 </script>
 <script>
+    //Alertify JS
+    $ = function (id) {
+        return document.getElementById(id);
+    },
+            reset = function () {
+                $("toggleCSS").href = "css/alertify.core.css";
+                alertify.set({
+                    labels: {
+                        ok: "OK",
+                        cancel: "Cancel"
+                    },
+                    delay: 5000,
+                    buttonReverse: false,
+                    buttonFocus: "ok"
+                });
+            };
+
+    // Standard Dialogs
+    $("confirm").onclick = function () {
+        reset();
+        alertify.confirm("This is a confirm dialog", function (e) {
+            if (e) {
+                alertify.success("You've clicked OK");
+            } else {
+                alertify.error("You've clicked Cancel");
+            }
+        });
+        return false;
+    };
+
     //Data Tables
     $(document).ready(function () {
         $('#data-table1').dataTable({
@@ -481,7 +519,7 @@
         });
     });
 
-    function lick(obj, id){
+    function lick(obj, id) {
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
@@ -496,12 +534,13 @@
     }
 
     //清除 span 提示文字
-    function resetEdit () {
-        document.getElementById("span_name").innerHTML='';
-        document.getElementById("span_address").innerHTML='';
-        document.getElementById("span_type").innerHTML='';
-        document.getElementById("span_number").innerHTML='';
-    };
+    function resetEdit() {
+        document.getElementById("span_name").innerHTML = '';
+        document.getElementById("span_address").innerHTML = '';
+        document.getElementById("span_type").innerHTML = '';
+        document.getElementById("span_number").innerHTML = '';
+    }
+    ;
 
     //隐藏编辑模态框时清除span
     $('#edit').on('hide.bs.modal', function () {
@@ -515,17 +554,17 @@
         var address = document.getElementById('address').value;
         var type = document.getElementById('type').value;
         var number = document.getElementById('number').value;
-        if (name == ""){
-            document.getElementById("span_name").innerHTML='请输入部门名称';
+        if (name == "") {
+            document.getElementById("span_name").innerHTML = '请输入部门名称';
             return false;
-        }else if (newPassword_1 == ""){
-            document.getElementById("span_address").innerHTML='请输入密码';
+        } else if (newPassword_1 == "") {
+            document.getElementById("span_address").innerHTML = '请输入密码';
             return false;
-        }else if (newPassword_1.length < 8){
-            document.getElementById("span_type").innerHTML='密码不可少于8位';
+        } else if (newPassword_1.length < 8) {
+            document.getElementById("span_type").innerHTML = '密码不可少于8位';
             return false;
-        }else if (newPassword_2 == ""){
-            document.getElementById("span_number").innerHTML='请确认密码';
+        } else if (newPassword_2 == "") {
+            document.getElementById("span_number").innerHTML = '请确认密码';
             return false;
         }
         return true;

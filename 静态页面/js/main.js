@@ -32,7 +32,7 @@ function changePassword() {
     }
     return true;
 }
-function reset(){
+function resetMessage(){
     /* 全局定义变量 message */
     result = 'success';
     message = '登陆成功';
@@ -43,12 +43,12 @@ function message(){
     message = '登陆成功'
     if(result != '' && message != ''){
         if(result == 'success'){
-            reset();
+            resetMessage();
             alertify.success(message);
             result = '';
             message = ''
         }else if(result == 'error'){
-            reset();
+            resetMessage();
             alertify.error(message);
             result = '';
             message = ''
