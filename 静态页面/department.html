@@ -343,7 +343,7 @@
                                 部门名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入部门名称" onkeyup="changePassword()">
+                                <input type="text" id="name" placeholder="请输入部门名称" onkeyup="edit()">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
@@ -352,7 +352,7 @@
                                 打卡地址
                             </label>
                             <div class="controls">
-                                <input type="text" id="address" placeholder="请输入打卡地址" onkeyup="changePassword()">
+                                <input type="text" id="address" placeholder="请输入打卡地址" onkeyup="edit()">
                                 <span style="color: red;" id="span_address"></span>
                             </div>
                         </div>
@@ -375,7 +375,7 @@
                                 部门员工数
                             </label>
                             <div class="controls">
-                                <input type="text" id="number" value="员工数" onkeyup="changePassword()" readonly>
+                                <input type="text" id="number" value="员工数" onkeyup="edit()" readonly>
                                 <span style="color: red;" id="span_number"></span>
                             </div>
                         </div>
@@ -477,35 +477,6 @@
 <script type="text/javascript" src="js/main.js">
 </script>
 <script>
-    //Alertify JS
-    $ = function (id) {
-        return document.getElementById(id);
-    },
-            reset = function () {
-                $("toggleCSS").href = "css/alertify.core.css";
-                alertify.set({
-                    labels: {
-                        ok: "OK",
-                        cancel: "Cancel"
-                    },
-                    delay: 5000,
-                    buttonReverse: false,
-                    buttonFocus: "ok"
-                });
-            };
-
-    // Standard Dialogs
-    $("confirm").onclick = function () {
-        reset();
-        alertify.confirm("This is a confirm dialog", function (e) {
-            if (e) {
-                alertify.success("You've clicked OK");
-            } else {
-                alertify.error("You've clicked Cancel");
-            }
-        });
-        return false;
-    };
 
     //Data Tables
     $(document).ready(function () {
@@ -547,9 +518,17 @@
         resetEdit();
     })
 
+    //清除span标签内文字
+    function resetEdit(){
+        document.getElementById("span_name").innerHTML = '';
+        document.getElementById("span_address").innerHTML = '';
+        document.getElementById("span_type").innerHTML = '';
+        document.getElementById("span_number").innerHTML = '';
+    }
+
     //编辑部门信息表单验证
     function edit() {
-        resetPassword();
+        resetEdit();
         var name = document.getElementById('name').value;
         var address = document.getElementById('address').value;
         var type = document.getElementById('type').value;
@@ -557,14 +536,14 @@
         if (name == "") {
             document.getElementById("span_name").innerHTML = '请输入部门名称';
             return false;
-        } else if (newPassword_1 == "") {
-            document.getElementById("span_address").innerHTML = '请输入密码';
+        } else if (address == "") {
+            document.getElementById("span_address").innerHTML = '请输入打卡地址';
             return false;
-        } else if (newPassword_1.length < 8) {
-            document.getElementById("span_type").innerHTML = '密码不可少于8位';
+        } else if (type == "") {
+            document.getElementById("span_type").innerHTML = '请选择考勤方式';
             return false;
-        } else if (newPassword_2 == "") {
-            document.getElementById("span_number").innerHTML = '请确认密码';
+        } else if (number == "") {
+            document.getElementById("span_number").innerHTML = '员工数异常，请联系管理员';
             return false;
         }
         return true;
