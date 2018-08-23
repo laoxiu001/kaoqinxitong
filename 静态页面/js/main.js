@@ -9,7 +9,6 @@ function resetPasswordInput () {
     document.getElementById("password").value='';
     document.getElementById("newPassword_1").value='';
     document.getElementById("newPassword_2").value='';
-    console.log(123)
 };
 //隐藏修改密码模态框时清除span
 $('#myModal').on('hide.bs.modal', function () {
