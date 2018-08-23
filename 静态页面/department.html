@@ -495,8 +495,8 @@
         $("toggleCSS").href = "css/alertify.core.css";
         alertify.set({
             labels: {
-                ok: "OK",
-                cancel: "Cancel"
+                cancel: "确认",
+                ok: "取消",
             },
             delay: 5000,
             buttonReverse: false,
@@ -507,11 +507,11 @@
     var confirm = document.getElementById('confirm');
     confirm.onclick = function () {
         reset();
-        alertify.confirm("This is a confirm dialog", function (e) {
+        alertify.confirm("确认删除该条记录吗？", function (e) {
             if (e) {
-                alertify.success("You've clicked OK");
+                //用户点击了取消按钮，不执行操作
             } else {
-                alertify.error("You've clicked Cancel");
+                alertify.error("删除成功");
             }
         });
         return false;
