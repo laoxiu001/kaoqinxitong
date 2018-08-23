@@ -490,6 +490,33 @@
         });
     });
 
+    //Alertify JS插件初始化
+    reset = function () {
+        $("toggleCSS").href = "css/alertify.core.css";
+        alertify.set({
+            labels: {
+                ok: "OK",
+                cancel: "Cancel"
+            },
+            delay: 5000,
+            buttonReverse: false,
+            buttonFocus: "ok"
+        });
+    };
+    //注册删除按钮点击事件
+    var confirm = document.getElementById('confirm');
+    confirm.onclick = function () {
+        reset();
+        alertify.confirm("This is a confirm dialog", function (e) {
+            if (e) {
+                alertify.success("You've clicked OK");
+            } else {
+                alertify.error("You've clicked Cancel");
+            }
+        });
+        return false;
+    };
+
     function lick(obj, id) {
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
@@ -519,7 +546,7 @@
     })
 
     //清除span标签内文字
-    function resetEdit(){
+    function resetEdit() {
         document.getElementById("span_name").innerHTML = '';
         document.getElementById("span_address").innerHTML = '';
         document.getElementById("span_type").innerHTML = '';

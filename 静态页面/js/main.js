@@ -4,9 +4,17 @@ function resetPassword () {
     document.getElementById("span_newPassword_1").innerHTML='';
     document.getElementById("span_newPassword_2").innerHTML='';
 };
+//清除密码修改 input 输入框
+function resetPasswordInput () {
+    document.getElementById("password").value='';
+    document.getElementById("newPassword_1").value='';
+    document.getElementById("newPassword_2").value='';
+    console.log(123)
+};
 //隐藏修改密码模态框时清除span
 $('#myModal').on('hide.bs.modal', function () {
     resetPassword();
+    resetPasswordInput();
 })
 //修改密码执行表单验证
 function changePassword() {
