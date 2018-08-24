@@ -9564,7 +9564,7 @@
 		 *    // Get data from { "data": [...] }
 		 *    $(document).ready( function() {
 		 *      var oTable = $('#example').dataTable( {
-		 *        "sAjaxSource": "sources/data.txt",
+		 *        "sAjaxSource": "sources/punch.txt",
 		 *        "sAjaxDataProp": "data"
 		 *      } );
 		 *    } );
@@ -9573,7 +9573,7 @@
 		 *    // Get data from { "data": { "inner": [...] } }
 		 *    $(document).ready( function() {
 		 *      var oTable = $('#example').dataTable( {
-		 *        "sAjaxSource": "sources/data.txt",
+		 *        "sAjaxSource": "sources/punch.txt",
 		 *        "sAjaxDataProp": "data.inner"
 		 *      } );
 		 *    } );
