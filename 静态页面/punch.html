@@ -17,7 +17,7 @@
 <!--[if gt IE 8]>
 <!-->
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <!--
 <![endif]-->
@@ -448,22 +448,23 @@
 </script>
 <script>
     /*
-     点击查询员工信息执行方法：
-     传入值：
-        员工工号：search_number
-     返回值：
-        员工工号：inf_number
-        员工姓名：inf_name
-        员工手机号：inf_phone
-        员工所在部门：inf_department
-        员工职位：inf_position
-        员工班次：inf_shift_id
-        员工状态（在/离职）：inf_status
-    */
+    * 点击查询员工信息执行方法：
+    *
+    * 传入值：
+    *   员工工号：search_number
+    * 返回值：
+    *   员工工号：inf_number
+    *   员工姓名：inf_name
+    *   员工手机号：inf_phone
+    *   员工所在部门：inf_department
+    *   员工职位：inf_position
+    *   员工班次：inf_shift_id
+    *   员工状态（在/离职）：inf_status
+    * */
 function search_inf() {
   $.ajax({
-    cache: true,
-    type: "POST",
+    cache: false,
+    type: "GET",
     url:"data/punch.txt",
     data: 'search_number=' + search_number,
     dataType : 'json',
@@ -471,14 +472,14 @@ function search_inf() {
     error: function(request) {
       console.log(request.error);
     },
-    success: function(msg) {
-      $('#inf_number').val(msg.number);
-      $('#inf_name').val(msg.name);
-      $('#inf_phone').val(msg.phone);
-      $('#inf_department').val(msg.department);
-      $('#inf_position').val(msg.position);
-      $('#inf_shift_id').val(msg.shift_id);
-      $('#inf_status').val(msg.status);
+    success: function(data) {
+      $('#inf_number').val(data.number);
+      $('#inf_name').val(data.name);
+      $('#inf_phone').val(data.phone);
+      $('#inf_department').val(data.department);
+      $('#inf_position').val(data.position);
+      $('#inf_shift_id').val(data.shift_id);
+      $('#inf_status').val(data.status);
     }
   });
 }

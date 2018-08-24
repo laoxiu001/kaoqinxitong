@@ -1,0 +1,182 @@
+[
+{
+    "id" : "1" ,
+    "name" : "王梓清",
+    "number" : "015864" ,
+    "phone" : "15756487542",
+    "department" : "人事部",
+    "position" : "总经理",
+    "shift_id" : "3",
+    "level" : "1"
+},
+{
+    "id" : "2" ,
+    "name" : "叶春林",
+    "number" : "14586" ,
+    "phone" : "13755864454",
+    "department" : "行政部",
+    "position" : "行政",
+    "shift_id" : "3",
+    "level" : "2"
+},
+{
+    "id" : "3" ,
+    "name" : "彭于晏",
+    "number" : "45856" ,
+    "phone" : "15899456852",
+    "department" : "保洁部",
+    "position" : "员工",
+    "shift_id" : "5",
+    "level" : "3"
+},
+{
+    "id" : "4" ,
+    "name" : "王梓清",
+    "number" : "015864" ,
+    "phone" : "15756487542",
+    "department" : "人事部",
+    "position" : "总经理",
+    "shift_id" : "3",
+    "level" : "1"
+},
+{
+    "id" : "5" ,
+    "name" : "叶春林",
+    "number" : "14586" ,
+    "phone" : "13755864454",
+    "department" : "行政部",
+    "position" : "行政",
+    "shift_id" : "3",
+    "level" : "2"
+},
+{
+    "id" : "6" ,
+    "name" : "彭于晏",
+    "number" : "45856" ,
+    "phone" : "15899456852",
+    "department" : "保洁部",
+    "position" : "员工",
+    "shift_id" : "5",
+    "level" : "3"
+},
+{
+    "id" : "7" ,
+    "name" : "王梓清",
+    "number" : "015864" ,
+    "phone" : "15756487542",
+    "department" : "人事部",
+    "position" : "总经理",
+    "shift_id" : "3",
+    "level" : "1"
+},
+{
+    "id" : "8" ,
+    "name" : "叶春林",
+    "number" : "14586" ,
+    "phone" : "13755864454",
+    "department" : "行政部",
+    "position" : "行政",
+    "shift_id" : "3",
+    "level" : "2"
+},
+{
+    "id" : "9" ,
+    "name" : "彭于晏",
+    "number" : "45856" ,
+    "phone" : "15899456852",
+    "department" : "保洁部",
+    "position" : "员工",
+    "shift_id" : "5",
+    "level" : "3"
+},
+{
+    "id" : "10" ,
+    "name" : "王梓清",
+    "number" : "015864" ,
+    "phone" : "15756487542",
+    "department" : "人事部",
+    "position" : "总经理",
+    "shift_id" : "3",
+    "level" : "1"
+},
+{
+    "id" : "11" ,
+    "name" : "叶春林",
+    "number" : "14586" ,
+    "phone" : "13755864454",
+    "department" : "行政部",
+    "position" : "行政",
+    "shift_id" : "3",
+    "level" : "2"
+},
+{
+    "id" : "12" ,
+    "name" : "彭于晏",
+    "number" : "45856" ,
+    "phone" : "15899456852",
+    "department" : "保洁部",
+    "position" : "员工",
+    "shift_id" : "5",
+    "level" : "3"
+},
+{
+    "id" : "13" ,
+    "name" : "王梓清",
+    "number" : "015864" ,
+    "phone" : "15756487542",
+    "department" : "人事部",
+    "position" : "总经理",
+    "shift_id" : "3",
+    "level" : "1"
+},
+{
+    "id" : "14" ,
+    "name" : "叶春林",
+    "number" : "14586" ,
+    "phone" : "13755864454",
+    "department" : "行政部",
+    "position" : "行政",
+    "shift_id" : "3",
+    "level" : "2"
+},
+{
+    "id" : "15" ,
+    "name" : "彭于晏",
+    "number" : "45856" ,
+    "phone" : "15899456852",
+    "department" : "保洁部",
+    "position" : "员工",
+    "shift_id" : "5",
+    "level" : "3"
+},
+{
+    "id" : "16" ,
+    "name" : "王梓清",
+    "number" : "015864" ,
+    "phone" : "15756487542",
+    "department" : "人事部",
+    "position" : "总经理",
+    "shift_id" : "3",
+    "level" : "1"
+},
+{
+    "id" : "17" ,
+    "name" : "叶春林",
+    "number" : "14586" ,
+    "phone" : "13755864454",
+    "department" : "行政部",
+    "position" : "行政",
+    "shift_id" : "3",
+    "level" : "2"
+},
+{
+    "id" : "18" ,
+    "name" : "彭于晏",
+    "number" : "45856" ,
+    "phone" : "15899456852",
+    "department" : "保洁部",
+    "position" : "员工",
+    "shift_id" : "5",
+    "level" : "3"
+}
+]
