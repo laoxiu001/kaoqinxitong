@@ -1,0 +1,128 @@
+[
+{
+    "id" : "1" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "2" ,
+    "name" : "行政部",
+    "punch_address" : "南京市宏递路186号" ,
+    "method_id" : "人工考勤",
+    "number" : "4524"
+},
+{
+    "id" : "3" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "4" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "5" ,
+    "name" : "行政部",
+    "punch_address" : "南京市宏递路186号" ,
+    "method_id" : "人工考勤",
+    "number" : "4524"
+},
+{
+    "id" : "6" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "7" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "8" ,
+    "name" : "行政部",
+    "punch_address" : "南京市宏递路186号" ,
+    "method_id" : "人工考勤",
+    "number" : "4524"
+},
+{
+    "id" : "9" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "10" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "11" ,
+    "name" : "行政部",
+    "punch_address" : "南京市宏递路186号" ,
+    "method_id" : "人工考勤",
+    "number" : "4524"
+},
+{
+    "id" : "12" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "13" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "14" ,
+    "name" : "行政部",
+    "punch_address" : "南京市宏递路186号" ,
+    "method_id" : "人工考勤",
+    "number" : "4524"
+},
+{
+    "id" : "15" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "16" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+},
+{
+    "id" : "17" ,
+    "name" : "行政部",
+    "punch_address" : "南京市宏递路186号" ,
+    "method_id" : "人工考勤",
+    "number" : "4524"
+},
+{
+    "id" : "18" ,
+    "name" : "人事部",
+    "punch_address" : "重庆市璧山区186号" ,
+    "method_id" : "打卡考勤",
+    "number" : "1575"
+}
+]

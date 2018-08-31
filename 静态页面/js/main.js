@@ -62,28 +62,3 @@ function message(){
         }
     }
 };
-
-//punch.html打卡测试页面JS
-function punch_search() {
-    document.getElementById("span_search").innerHTML='';
-    var number = document.getElementById('search_number').value;
-    //清空span内容
-    if (number == ""){
-        document.getElementById("span_search").innerHTML='员工工号为空';
-        return false;
-    }else if(isNaN(number)){
-        document.getElementById("span_search").innerHTML='请输入数字';
-        return false;
-    }
-    return true;
-}
-function punch() {
-    //清空span内容
-    document.getElementById("span_punch").innerHTML='';
-    var number = document.getElementById('inf_number').value;
-    if (number == ""){
-        document.getElementById("span_punch").innerHTML='员工工号为空';
-        return false;
-    }
-    return true;
-}

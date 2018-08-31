@@ -175,7 +175,7 @@
                           <div class="controls">
                             <div class="input-append">
                               <input type="text" placeholder="请输入员工工号" id="search_number" name="" onkeyup="punch_search()">
-                              <input class="btn btn-danger" type="button" value="查询" onclick="search_inf()">
+                              <input class="btn btn-danger" type="button" value="查询">
                             </div>
                           </div>
                           <div class="controls">
@@ -449,6 +449,7 @@
 <script>
     /*
     * 点击查询员工信息执行方法：
+    * 一旦员工工号输入框内容改变，就执行该方法动态查询员工信息
     *
     * 传入值：
     *   员工工号：search_number
@@ -461,7 +462,7 @@
     *   员工班次：inf_shift_id
     *   员工状态（在/离职）：inf_status
     * */
-function search_inf() {
+function search_ajax() {
   $.ajax({
     cache: false,
     type: "GET",
@@ -473,16 +474,47 @@ function search_inf() {
       console.log(request.error);
     },
     success: function(data) {
-      $('#inf_number').val(data.number);
-      $('#inf_name').val(data.name);
-      $('#inf_phone').val(data.phone);
-      $('#inf_department').val(data.department);
-      $('#inf_position').val(data.position);
-      $('#inf_shift_id').val(data.shift_id);
-      $('#inf_status').val(data.status);
+        $('#inf_number').val(data.number);
+        $('#inf_name').val(data.name);
+        $('#inf_phone').val(data.phone);
+        $('#inf_department').val(data.department);
+        $('#inf_position').val(data.position);
+        $('#inf_shift_id').val(data.shift_id);
+        $('#inf_status').val(data.status);
     }
   });
 }
+    /*
+    * 查询员工信息按钮功能
+    * */
+    function punch_search() {
+      document.getElementById("span_search").innerHTML='';
+      var number = document.getElementById('search_number').value;
+      //清空span内容
+      if (number == ""){
+        document.getElementById("span_search").innerHTML='员工工号为空';
+        return false;
+      }else if(isNaN(number)){
+        document.getElementById("span_search").innerHTML='请输入数字';
+        return false;
+      }
+      search_ajax();
+      return true;
+    }
+
+    /*
+    * 打卡按钮功能
+    * */
+    function punch() {
+      //清空span内容
+      document.getElementById("span_punch").innerHTML='';
+      var number = document.getElementById('inf_number').value;
+      if (number == ""){
+        document.getElementById("span_punch").innerHTML='员工工号为空';
+        return false;
+      }
+      return true;
+    }
 </script>
 </body>
 </html>
