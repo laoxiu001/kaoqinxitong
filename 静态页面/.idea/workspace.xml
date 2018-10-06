@@ -31,26 +31,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employeeManage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="employeeManage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/employeeManage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13050">
-              <caret line="754" column="9" selection-start-line="754" selection-start-column="9" selection-end-line="754" selection-end-column="9" />
+            <state relative-caret-position="59">
+              <caret line="510" column="5" selection-start-line="510" selection-start-column="5" selection-end-line="510" selection-end-column="5" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/login.html">
+      <file leaf-file-name="department.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/department.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="132" column="10" selection-start-line="132" selection-start-column="10" selection-end-line="132" selection-end-column="10" />
+            <state relative-caret-position="51">
+              <caret line="600" column="0" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
               <folding>
-                <marker date="1534075080552" expanded="true" signature="760:772" ph="..." />
+                <marker date="1535080548163" expanded="true" signature="864:878" ph="..." />
               </folding>
             </state>
           </provider>
@@ -96,10 +97,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="174" />
-    <option name="y" value="197" />
-    <option name="width" value="1504" />
-    <option name="height" value="831" />
+    <option name="x" value="18" />
+    <option name="y" value="107" />
+    <option name="width" value="1255" />
+    <option name="height" value="681" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -126,8 +127,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -138,9 +140,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -619,14 +620,15 @@
       <workItem from="1534071596041" duration="291000" />
       <workItem from="1534073150125" duration="615000" />
       <workItem from="1534121223297" duration="571000" />
+      <workItem from="1535675612740" duration="288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54805000" />
+    <option name="totallyTimeSpent" value="55093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="174" y="197" width="1504" height="831" extended-state="0" />
+    <frame x="18" y="107" width="1255" height="681" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -640,7 +642,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19313593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19240098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -673,6 +675,36 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employeeManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12225">
+          <caret line="553" column="7" selection-start-line="553" selection-start-column="7" selection-end-line="553" selection-end-column="7" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1534075080552" expanded="true" signature="760:772" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -686,6 +718,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -705,6 +738,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -724,6 +758,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -743,6 +778,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -762,6 +798,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -781,6 +818,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -800,6 +838,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -819,6 +858,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -838,6 +878,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -857,6 +898,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -876,6 +918,7 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>
@@ -978,23 +1021,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/employeeManage.html">
+    <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13050">
-          <caret line="754" column="9" selection-start-line="754" selection-start-column="9" selection-end-line="754" selection-end-column="9" />
+        <state relative-caret-position="52">
+          <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
           <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1534075080552" expanded="true" signature="760:772" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
+    <entry file="file://$PROJECT_DIR$/department.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="132" column="10" selection-start-line="132" selection-start-column="10" selection-end-line="132" selection-end-column="10" />
+        <state relative-caret-position="51">
+          <caret line="600" column="0" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
           <folding>
-            <marker date="1534075080552" expanded="true" signature="760:772" ph="..." />
+            <marker date="1535080548163" expanded="true" signature="864:878" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employeeManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="510" column="5" selection-start-line="510" selection-start-column="5" selection-end-line="510" selection-end-column="5" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1535079983338" expanded="true" signature="832:844" ph="..." />
           </folding>
         </state>
       </provider>

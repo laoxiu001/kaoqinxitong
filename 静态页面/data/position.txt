@@ -1,0 +1,74 @@
+[
+{
+    "id" : "1" ,
+    "name" : "普通员工",
+    "mechanism_id" : "人事部门" ,
+    "permission_id" : "管理员"
+},
+{
+    "id" : "2" ,
+    "name" : "项目经理",
+    "mechanism_id" : "企业部门" ,
+    "permission_id" : "普通用户"
+},
+{
+    "id" : "3" ,
+    "name" : "总经理",
+    "mechanism_id" : "市场部门" ,
+    "permission_id" : "普通用户"
+},
+{
+    "id" : "4" ,
+    "name" : "普通员工",
+    "mechanism_id" : "人事部门" ,
+    "permission_id" : "管理员"
+},
+{
+    "id" : "5" ,
+    "name" : "项目经理",
+    "mechanism_id" : "企业部门" ,
+    "permission_id" : "普通用户"
+},
+{
+    "id" : "6" ,
+    "name" : "总经理",
+    "mechanism_id" : "市场部门" ,
+    "permission_id" : "普通用户"
+},
+{
+    "id" : "7" ,
+    "name" : "普通员工",
+    "mechanism_id" : "人事部门" ,
+    "permission_id" : "管理员"
+},
+{
+    "id" : "8" ,
+    "name" : "项目经理",
+    "mechanism_id" : "企业部门" ,
+    "permission_id" : "普通用户"
+},
+{
+    "id" : "9" ,
+    "name" : "总经理",
+    "mechanism_id" : "市场部门" ,
+    "permission_id" : "普通用户"
+},
+{
+    "id" : "10" ,
+    "name" : "普通员工",
+    "mechanism_id" : "人事部门" ,
+    "permission_id" : "管理员"
+},
+{
+    "id" : "11" ,
+    "name" : "项目经理",
+    "mechanism_id" : "企业部门" ,
+    "permission_id" : "普通用户"
+},
+{
+    "id" : "12" ,
+    "name" : "总经理",
+    "mechanism_id" : "市场部门" ,
+    "permission_id" : "普通用户"
+}
+]

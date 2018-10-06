@@ -39,3 +39,8 @@ json格式最后一行数据不能有" , " :
     "shift_id" : "3",
     "status" : "在职"    <-----
 }
+
+
+搜索插件不见，datatable插件不生效，报错：
+Cannot read property 'fnSetData' of undefined
+解决办法：table表格的头部和内部数据列数不匹配

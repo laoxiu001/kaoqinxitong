@@ -24,7 +24,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        考勤系统-部门信息
+        考勤系统-请假类别
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -95,7 +95,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="department.html" class="selected">
+                    <a href="department.html">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
                         部门信息
                     </a>
@@ -107,7 +107,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="leaveRecord.html">
+                    <a href="leaveRecord.html" class="selected">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0e4;"></div>
                         请假管理
                     </a>
@@ -143,7 +143,16 @@
         <!--头部副导航栏-->
         <div class="sub-nav">
             <ul>
-                <li><a href="#" class="heading">部门信息</a></li>
+                <li>
+                    <a href="leaveRecord.html">
+                        请假记录
+                    </a>
+                </li>
+                <li>
+                    <a href="leaveType.html" class="heading">
+                        请假类别管理
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="dashboard-wrapper">
@@ -156,7 +165,7 @@
                         <div class="widget">
                             <div class="widget-header">
                                 <div class="title" id="list">
-                                    部门列表
+                                    请假记录
                                 </div>
                                 <span class="tools">
                       <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
@@ -165,30 +174,20 @@
                             <div class="widget-body">
                                 <div id="dt_example" class="example_alt_pagination">
                                     <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
-                                        <!-- 添加部门按钮 -->
-                                        <button class="btn btn-primary" href="#edit" data-toggle="modal"
-                                                onclick="lick(this, this.id)">添加部门
-                                        </button>
-                                        <!-- 部门信息列表 -->
+                                        <!-- 请假记录列表 -->
                                         <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
                                                id="data-table1" aria-describedby="data-table_info">
 
                                             <thead>
                                             <tr role="row">
                                                 <th>
-                                                    部门编号
+                                                    类别编号
                                                 </th>
                                                 <th>
-                                                    部门名称
+                                                    类别名称
                                                 </th>
                                                 <th>
-                                                    打卡地址
-                                                </th>
-                                                <th>
-                                                    考勤方式
-                                                </th>
-                                                <th>
-                                                    部门员工数
+                                                    处理方式
                                                 </th>
                                                 <th>
                                                     操作
@@ -196,7 +195,7 @@
                                             </tr>
                                             </thead>
 
-                                            <tbody id="table_department" role="alert" aria-live="polite" aria-relevant="all">
+                                            <tbody id="table_record" role="alert" aria-live="polite" aria-relevant="all">
                                             </tbody>
                                         </table>
                                     </div>
@@ -282,7 +281,7 @@
     <!--/.fluid-container-->
 </div>
 <!-- 主体内容 end -->
-<!-- 修改部门信息模态框 start -->
+<!-- 请假审核模态框 start -->
 <div id="edit" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -290,7 +289,7 @@
         </button>
         <h3>
             <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
-            修改部门信息
+            请假记录审核
         </h3>
     </div>
     <form class="form-horizontal no-margin" onsubmit="return edit()">
@@ -301,43 +300,20 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
-                                部门名称
+                                类别名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入部门名称" onkeyup="edit()">
+                                <input type="text" id="name" placeholder="请输入类别名称" onkeyup="edit()">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="address">
-                                打卡地址
-                            </label>
-                            <div class="controls">
-                                <input type="text" id="address" placeholder="请输入打卡地址" onkeyup="edit()">
-                                <span style="color: red;" id="span_address"></span>
-                            </div>
-                        </div>
-                        <div class="control-group">
                             <label class="control-label" for="type">
-                                考勤方式
+                                处理方式
                             </label>
                             <div class="controls">
-                                <select name="type" id="type">
-                                    <option value="">-- 请选择考勤方式 --</option>
-                                    <option value="打卡考勤">打卡考勤</option>
-                                    <option value="人工考勤">人工考勤</option>
-                                    <option value="指纹考勤">指纹考勤</option>
-                                </select>
+                                <input type="text" id="type" placeholder="请输入处理方式" onkeyup="edit()">
                                 <span style="color: red;" id="span_type"></span>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="number">
-                                部门员工数
-                            </label>
-                            <div class="controls">
-                                <input type="text" id="number" value="员工数" onkeyup="edit()" readonly>
-                                <span style="color: red;" id="span_number"></span>
                             </div>
                         </div>
                     </div>
@@ -444,7 +420,7 @@
      * */
     //加载部门信息列表数据
     $(document).ready(function () {
-        getDepartment();
+        getLeave_record();
     });
 
     //Data Tables
@@ -456,11 +432,11 @@
 
 </script>
 <script>
-    function getDepartment() {
+    function getLeave_record() {
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/department.txt",
+            url : "data/leaveType.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
@@ -481,12 +457,12 @@
                     html += "</tr>";
                 }
                 //将拼接完成的table传入表格元素节点内
-                $("#table_department").append(html);
+                $("#table_record").append(html);
             }
 
         })
     }
-    
+
     //Alertify JS插件初始化
     reset = function () {
         $("toggleCSS").href = "css/alertify.core.css";
@@ -517,22 +493,16 @@
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
-        var address = td_content.eq(2).text(); //获取当前行第二个td的值
-        var type = td_content.eq(3).text(); //获取当前行第二个td的值
-        var number = td_content.eq(4).text(); //获取当前行第二个td的值
+        var type = td_content.eq(2).text(); //获取当前行第二个td的值
 
         document.getElementById('name').value = name;
-        document.getElementById('address').value = address;
         document.getElementById('type').value = type;
-        document.getElementById('number').value = number;
     }
 
     //清除 span 提示文字
     function resetEdit() {
-        document.getElementById("span_name").innerHTML = '';
-        document.getElementById("span_address").innerHTML = '';
-        document.getElementById("span_type").innerHTML = '';
-        document.getElementById("span_number").innerHTML = '';
+        document.getElementById('span_name').innerHTML = '';
+        document.getElementById('span_type').innerHTML = '';
     }
     ;
 
@@ -545,23 +515,27 @@
     function edit() {
         resetEdit();
         var name = document.getElementById('name').value;
-        var address = document.getElementById('address').value;
-        var type = document.getElementById('type').value;
-        var number = document.getElementById('number').value;
+        var user_id = document.getElementById('type').value;
+
         if (name == "") {
-            document.getElementById("span_name").innerHTML = '请输入部门名称';
+            document.getElementById("span_name").innerHTML = '请输入类别名称';
             return false;
-        } else if (address == "") {
-            document.getElementById("span_address").innerHTML = '请输入打卡地址';
-            return false;
-        } else if (type == "") {
-            document.getElementById("span_type").innerHTML = '请选择考勤方式';
-            return false;
-        } else if (number == "") {
-            document.getElementById("span_number").innerHTML = '员工数异常，请联系管理员';
+        } else if (user_id == "") {
+            document.getElementById("span_type").innerHTML = '请输入处理方式';
             return false;
         }
         return true;
+    }
+    
+    function dateFormat(time) {
+        /*
+        * 时间格式化
+        * 转换前格式：2017-10-10 08:08
+        * 转换后：2017-10-10T08:08
+        * */
+        time = time.replace(' ','T');
+        console.log(time);
+        return time;
     }
 </script>
 </body>

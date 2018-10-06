@@ -24,7 +24,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        考勤系统-部门信息
+        考勤系统-请假记录
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -95,7 +95,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="department.html" class="selected">
+                    <a href="department.html">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
                         部门信息
                     </a>
@@ -107,7 +107,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="leaveRecord.html">
+                    <a href="leaveRecord.html" class="selected">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0e4;"></div>
                         请假管理
                     </a>
@@ -143,7 +143,16 @@
         <!--头部副导航栏-->
         <div class="sub-nav">
             <ul>
-                <li><a href="#" class="heading">部门信息</a></li>
+                <li>
+                    <a href="leaveRecord.html" class="heading">
+                        请假记录
+                    </a>
+                </li>
+                <li>
+                    <a href="leaveType.html">
+                        请假类别管理
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="dashboard-wrapper">
@@ -156,7 +165,7 @@
                         <div class="widget">
                             <div class="widget-header">
                                 <div class="title" id="list">
-                                    部门列表
+                                    请假记录
                                 </div>
                                 <span class="tools">
                       <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
@@ -165,38 +174,43 @@
                             <div class="widget-body">
                                 <div id="dt_example" class="example_alt_pagination">
                                     <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
-                                        <!-- 添加部门按钮 -->
-                                        <button class="btn btn-primary" href="#edit" data-toggle="modal"
-                                                onclick="lick(this, this.id)">添加部门
-                                        </button>
-                                        <!-- 部门信息列表 -->
+                                        <!-- 请假记录列表 -->
                                         <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
                                                id="data-table1" aria-describedby="data-table_info">
 
                                             <thead>
                                             <tr role="row">
                                                 <th>
-                                                    部门编号
+                                                    记录编号
                                                 </th>
                                                 <th>
-                                                    部门名称
+                                                    员工姓名
                                                 </th>
                                                 <th>
-                                                    打卡地址
+                                                    员工编号
                                                 </th>
                                                 <th>
-                                                    考勤方式
+                                                    请假类型
                                                 </th>
                                                 <th>
-                                                    部门员工数
+                                                    开始时间
+                                                </th>
+                                                <th>
+                                                    结束时间
+                                                </th>
+                                                <th>
+                                                    审核情况
                                                 </th>
                                                 <th>
                                                     操作
                                                 </th>
+                                                <th style="display: none">
+                                                    原因
+                                                </th>
                                             </tr>
                                             </thead>
 
-                                            <tbody id="table_department" role="alert" aria-live="polite" aria-relevant="all">
+                                            <tbody id="table_record" role="alert" aria-live="polite" aria-relevant="all">
                                             </tbody>
                                         </table>
                                     </div>
@@ -282,7 +296,7 @@
     <!--/.fluid-container-->
 </div>
 <!-- 主体内容 end -->
-<!-- 修改部门信息模态框 start -->
+<!-- 请假审核模态框 start -->
 <div id="edit" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -290,7 +304,7 @@
         </button>
         <h3>
             <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
-            修改部门信息
+            请假记录审核
         </h3>
     </div>
     <form class="form-horizontal no-margin" onsubmit="return edit()">
@@ -301,43 +315,74 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
-                                部门名称
+                                员工姓名
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入部门名称" onkeyup="edit()">
+                                <input type="text" id="name" placeholder="请输入员工姓名" onkeyup="edit()">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="address">
-                                打卡地址
+                            <label class="control-label" for="user_id">
+                                员工编号
                             </label>
                             <div class="controls">
-                                <input type="text" id="address" placeholder="请输入打卡地址" onkeyup="edit()">
-                                <span style="color: red;" id="span_address"></span>
+                                <input type="text" id="user_id" placeholder="请输入员工编号" onkeyup="edit()">
+                                <span style="color: red;" id="span_user_id"></span>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="type">
-                                考勤方式
+                            <label class="control-label" for="leave_type">
+                                请假类型
                             </label>
                             <div class="controls">
-                                <select name="type" id="type">
-                                    <option value="">-- 请选择考勤方式 --</option>
-                                    <option value="打卡考勤">打卡考勤</option>
-                                    <option value="人工考勤">人工考勤</option>
-                                    <option value="指纹考勤">指纹考勤</option>
+                                <select name="type" id="leave_type">
+                                    <option value="">-- 请选择请假类型 --</option>
+                                    <option value="事假">事假</option>
+                                    <option value="病假">病假</option>
+                                    <option value="产假">产假</option>
                                 </select>
-                                <span style="color: red;" id="span_type"></span>
+                                <span style="color: red;" id="span_leave_type"></span>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="number">
-                                部门员工数
+                            <label class="control-label" for="leava_start">
+                                开始时间
                             </label>
                             <div class="controls">
-                                <input type="text" id="number" value="员工数" onkeyup="edit()" readonly>
-                                <span style="color: red;" id="span_number"></span>
+                                <input type="datetime-local" id="leava_start" onkeyup="edit()">
+                                <span style="color: red;" id="span_leava_start"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="leava_stop">
+                                结束时间
+                            </label>
+                            <div class="controls">
+                                <input type="datetime-local" id="leava_stop" onkeyup="edit()">
+                                <span style="color: red;" id="span_leava_stop"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="leave_type">
+                                审核情况
+                            </label>
+                            <div class="controls">
+                                <select name="type" id="status">
+                                    <option value="待审核">待审核</option>
+                                    <option value="通过">通过</option>
+                                    <option value="不通过">不通过</option>
+                                </select>
+                                <span style="color: red;" id="span_status"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="reason">
+                                请假理由
+                            </label>
+                            <div class="controls">
+                                <textarea name="reason" cols="1" rows="2" id="reason" onkeyup="edit()"></textarea>
+                                <span style="color: red;" id="span_reason"></span>
                             </div>
                         </div>
                     </div>
@@ -444,7 +489,7 @@
      * */
     //加载部门信息列表数据
     $(document).ready(function () {
-        getDepartment();
+        getLeave_record();
     });
 
     //Data Tables
@@ -456,11 +501,11 @@
 
 </script>
 <script>
-    function getDepartment() {
+    function getLeave_record() {
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/department.txt",
+            url : "data/leaveRecord.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
@@ -472,21 +517,32 @@
                 for(var i = 0;i < data.length;i++){
                     html += "<tr>";
                     for(attr in data[i]){
+                        /* 如果是请假理由一栏，网页隐藏 */
+                        if(attr == "reason"){
+                            html += "<td style=\"display:none\">";
+                            html += data[i][attr];
+                            html += "</td>";
+                            break;
+                        }else if(attr == "leava_start" || attr == "leava_stop"){
+                            html += "<td>";
+                            html += data[i][attr];
+                            html += "</td>";
+                            continue;
+                        }
                         html += "<td>";
                         html += data[i][attr];
                         html += "</td>";
                     }
-                    html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">编辑 </button>";
-                    html += "<button class=\"btn btn-danger\" onclick=\"del()\">删除</button> </td>";
+                    html += "<td><button class=\"btn btn-success\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">审核</button>";
                     html += "</tr>";
                 }
                 //将拼接完成的table传入表格元素节点内
-                $("#table_department").append(html);
+                $("#table_record").append(html);
             }
 
         })
     }
-    
+
     //Alertify JS插件初始化
     reset = function () {
         $("toggleCSS").href = "css/alertify.core.css";
@@ -517,22 +573,31 @@
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
-        var address = td_content.eq(2).text(); //获取当前行第二个td的值
-        var type = td_content.eq(3).text(); //获取当前行第二个td的值
-        var number = td_content.eq(4).text(); //获取当前行第二个td的值
+        var user_id = td_content.eq(2).text(); //获取当前行第二个td的值
+        var leave_type = td_content.eq(3).text(); //获取当前行第二个td的值
+        var leava_start = dateFormat(td_content.eq(4).text()); //获取当前行第二个td的值
+        var leava_stop = dateFormat(td_content.eq(5).text()); //获取当前行第二个td的值
+        var status = td_content.eq(6).text(); //获取当前行第二个td的值
+        var reason = td_content.eq(7).text(); //获取当前行第二个td的值
 
         document.getElementById('name').value = name;
-        document.getElementById('address').value = address;
-        document.getElementById('type').value = type;
-        document.getElementById('number').value = number;
+        document.getElementById('user_id').value = user_id;
+        document.getElementById('leave_type').value = leave_type;
+        document.getElementById('leava_start').value = leava_start;
+        document.getElementById('leava_stop').value = leava_stop;
+        document.getElementById('status').value = status;
+        document.getElementById('reason').value = reason;
     }
 
     //清除 span 提示文字
     function resetEdit() {
-        document.getElementById("span_name").innerHTML = '';
-        document.getElementById("span_address").innerHTML = '';
-        document.getElementById("span_type").innerHTML = '';
-        document.getElementById("span_number").innerHTML = '';
+        document.getElementById('span_name').innerHTML = '';
+        document.getElementById('span_user_id').innerHTML = '';
+        document.getElementById('span_leave_type').innerHTML = '';
+        document.getElementById('span_leava_start').innerHTML = '';
+        document.getElementById('span_leava_stop').innerHTML = '';
+        document.getElementById('span_status').innerHTML = '';
+        document.getElementById('span_reason').innerHTML = '';
     }
     ;
 
@@ -545,23 +610,43 @@
     function edit() {
         resetEdit();
         var name = document.getElementById('name').value;
-        var address = document.getElementById('address').value;
-        var type = document.getElementById('type').value;
-        var number = document.getElementById('number').value;
+        var user_id = document.getElementById('user_id').value;
+        var leave_type = document.getElementById('leave_type').value;
+        var leava_start = document.getElementById('leava_start').value;
+        var leava_stop = document.getElementById('leava_stop').value;
+        var reason = document.getElementById('reason').value;
+
         if (name == "") {
-            document.getElementById("span_name").innerHTML = '请输入部门名称';
+            document.getElementById("span_name").innerHTML = '请输入员工姓名';
             return false;
-        } else if (address == "") {
-            document.getElementById("span_address").innerHTML = '请输入打卡地址';
+        } else if (user_id == "") {
+            document.getElementById("span_user_id").innerHTML = '请输入员工编号';
             return false;
-        } else if (type == "") {
-            document.getElementById("span_type").innerHTML = '请选择考勤方式';
+        } else if (leave_type == "") {
+            document.getElementById("span_leave_type").innerHTML = '请选择请假类型';
             return false;
-        } else if (number == "") {
-            document.getElementById("span_number").innerHTML = '员工数异常，请联系管理员';
+        } else if (leava_start == "") {
+            document.getElementById("span_leava_start").innerHTML = '请输入请假开始时间';
+            return false;
+        }else if (leava_stop == "") {
+            document.getElementById("span_leava_stop").innerHTML = '请输入请假结束时间';
+            return false;
+        }else if (reason == "") {
+            document.getElementById("span_reason").innerHTML = '请输入请假理由';
             return false;
         }
         return true;
+    }
+    
+    function dateFormat(time) {
+        /*
+        * 时间格式化
+        * 转换前格式：2017-10-10 08:08
+        * 转换后：2017-10-10T08:08
+        * */
+        time = time.replace(' ','T');
+        console.log(time);
+        return time;
     }
 </script>
 </body>

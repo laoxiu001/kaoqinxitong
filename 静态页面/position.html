@@ -24,7 +24,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        考勤系统-部门信息
+        考勤系统-职位管理
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -95,13 +95,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="department.html" class="selected">
+                    <a href="department.html">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
                         部门信息
                     </a>
                 </li>
                 <li>
-                    <a href="position.html">
+                    <a href="position.html" class="selected">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe073;"></div>
                         职位管理
                     </a>
@@ -143,7 +143,7 @@
         <!--头部副导航栏-->
         <div class="sub-nav">
             <ul>
-                <li><a href="#" class="heading">部门信息</a></li>
+                <li><a href="#" class="heading">职位管理</a></li>
             </ul>
         </div>
         <div class="dashboard-wrapper">
@@ -152,11 +152,11 @@
                 <div class="row-fluid">
 
                     <div class="span12">
-                        <!-- 部门信息 -->
+                        <!-- 职位管理 -->
                         <div class="widget">
                             <div class="widget-header">
                                 <div class="title" id="list">
-                                    部门列表
+                                    职位列表
                                 </div>
                                 <span class="tools">
                       <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
@@ -167,7 +167,7 @@
                                     <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
                                         <!-- 添加部门按钮 -->
                                         <button class="btn btn-primary" href="#edit" data-toggle="modal"
-                                                onclick="lick(this, this.id)">添加部门
+                                                onclick="lick(this, this.id)">添加职位
                                         </button>
                                         <!-- 部门信息列表 -->
                                         <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
@@ -176,19 +176,16 @@
                                             <thead>
                                             <tr role="row">
                                                 <th>
-                                                    部门编号
+                                                    职位编号
                                                 </th>
                                                 <th>
-                                                    部门名称
+                                                    职位名称
                                                 </th>
                                                 <th>
-                                                    打卡地址
+                                                    所属部门
                                                 </th>
                                                 <th>
-                                                    考勤方式
-                                                </th>
-                                                <th>
-                                                    部门员工数
+                                                    职位权限
                                                 </th>
                                                 <th>
                                                     操作
@@ -301,43 +298,37 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
-                                部门名称
+                                职位名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入部门名称" onkeyup="edit()">
+                                <input type="text" id="name" placeholder="请输入职位名称" onkeyup="edit()">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="address">
-                                打卡地址
+                            <label class="control-label" for="mechanism_id">
+                                所属企业机构
                             </label>
                             <div class="controls">
-                                <input type="text" id="address" placeholder="请输入打卡地址" onkeyup="edit()">
-                                <span style="color: red;" id="span_address"></span>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="type">
-                                考勤方式
-                            </label>
-                            <div class="controls">
-                                <select name="type" id="type">
-                                    <option value="">-- 请选择考勤方式 --</option>
-                                    <option value="打卡考勤">打卡考勤</option>
-                                    <option value="人工考勤">人工考勤</option>
-                                    <option value="指纹考勤">指纹考勤</option>
+                                <select name="type" id="mechanism_id">
+                                    <option value="">-- 请选择企业机构 --</option>
+                                    <option value="人事部门">人事部门</option>
+                                    <option value="企业部门">企业部门</option>
+                                    <option value="市场部门">市场部门</option>
                                 </select>
-                                <span style="color: red;" id="span_type"></span>
+                                <span style="color: red;" id="span_mechanism_id"></span>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="number">
-                                部门员工数
+                            <label class="control-label" for="permission_id">
+                                职位权限
                             </label>
                             <div class="controls">
-                                <input type="text" id="number" value="员工数" onkeyup="edit()" readonly>
-                                <span style="color: red;" id="span_number"></span>
+                                <select name="type" id="permission_id">
+                                    <option value="普通用户">普通用户</option>
+                                    <option value="管理员">管理员</option>
+                                </select>
+                                <span style="color: red;" id="span_permission_id"></span>
                             </div>
                         </div>
                     </div>
@@ -460,7 +451,7 @@
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/department.txt",
+            url : "data/position.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
@@ -517,22 +508,19 @@
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
-        var address = td_content.eq(2).text(); //获取当前行第二个td的值
-        var type = td_content.eq(3).text(); //获取当前行第二个td的值
-        var number = td_content.eq(4).text(); //获取当前行第二个td的值
+        var mechanism_id = td_content.eq(2).text(); //获取当前行第二个td的值
+        var permission_id = td_content.eq(3).text(); //获取当前行第二个td的值
 
         document.getElementById('name').value = name;
-        document.getElementById('address').value = address;
-        document.getElementById('type').value = type;
-        document.getElementById('number').value = number;
+        document.getElementById('mechanism_id').value = mechanism_id;
+        document.getElementById('permission_id').value = permission_id;
     }
 
     //清除 span 提示文字
     function resetEdit() {
         document.getElementById("span_name").innerHTML = '';
-        document.getElementById("span_address").innerHTML = '';
-        document.getElementById("span_type").innerHTML = '';
-        document.getElementById("span_number").innerHTML = '';
+        document.getElementById("span_mechanism_id").innerHTML = '';
+        document.getElementById("span_permission_id").innerHTML = '';
     }
     ;
 
@@ -545,20 +533,16 @@
     function edit() {
         resetEdit();
         var name = document.getElementById('name').value;
-        var address = document.getElementById('address').value;
-        var type = document.getElementById('type').value;
-        var number = document.getElementById('number').value;
+        var mechanism_id = document.getElementById('mechanism_id').value;
+        var permission_id = document.getElementById('permission_id').value;
         if (name == "") {
-            document.getElementById("span_name").innerHTML = '请输入部门名称';
+            document.getElementById("span_name").innerHTML = '请输入职位名称';
             return false;
-        } else if (address == "") {
-            document.getElementById("span_address").innerHTML = '请输入打卡地址';
+        } else if (mechanism_id == "") {
+            document.getElementById("span_address").innerHTML = '请选择所属部门';
             return false;
-        } else if (type == "") {
-            document.getElementById("span_type").innerHTML = '请选择考勤方式';
-            return false;
-        } else if (number == "") {
-            document.getElementById("span_number").innerHTML = '员工数异常，请联系管理员';
+        } else if (permission_id == "") {
+            document.getElementById("span_type").innerHTML = '请选择职位权限';
             return false;
         }
         return true;
