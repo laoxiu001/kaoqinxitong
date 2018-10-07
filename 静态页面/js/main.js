@@ -62,3 +62,12 @@ function message(){
         }
     }
 };
+function dateFormat(time) {
+    /*
+     * 时间格式化
+     * 转换前格式：2017-10-10 08:08
+     * 转换后：2017-10-10T08:08
+     * */
+    time = time.replace(' ','T');
+    return time;
+};

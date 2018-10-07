@@ -24,7 +24,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-    考勤系统-员工信息
+    考勤系统-班次管理
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -32,7 +32,8 @@
   <!-- bootstrap css -->
 
   <link href="icomoon/style.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet"> <!-- Important. For Theming change primary-color variable in main.css  -->
+  <link href="css/main.css" rel="stylesheet">
+  <!-- Important. For Theming change primary-color variable in main.css  -->
   <link href="css/alertify.core.css" rel="stylesheet" id="toggleCSS">
   <!--[if lte IE 7]>
   <script src="css/icomoon-font/lte-ie7.js">
@@ -82,7 +83,7 @@
           </a>
         </li>
         <li>
-          <a href="employeeManage.html" class="selected">
+          <a href="employeeManage.html">
             <div class="fs1" aria-hidden="true" data-icon="&#xe072;"></div>
             员工信息
           </a>
@@ -106,7 +107,7 @@
           </a>
         </li>
         <li>
-          <a href="shiftManagement.html">
+          <a href="shiftManagement.html" class="selected">
             <div class="fs1" aria-hidden="true" data-icon="&#xe075;"></div>
             班次管理
           </a>
@@ -136,7 +137,8 @@
     <!--头部副导航栏-->
     <div class="sub-nav">
       <ul>
-        <li><a href="#" class="heading">员工信息</a></li>
+        <li><a href="shiftManagement.html" class="heading">班次管理</a></li>
+        <li><a href="shiftApply.html">调班申请</a></li>
       </ul>
     </div>
     <div class="dashboard-wrapper">
@@ -145,11 +147,11 @@
         <div class="row-fluid">
 
           <div class="span12">
-            <!-- 员工信息 -->
+            <!-- 班次管理 -->
             <div class="widget">
               <div class="widget-header">
                 <div class="title" id="list">
-                  员工列表
+                  班次管理
                 </div>
                 <span class="tools">
                       <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
@@ -158,115 +160,47 @@
               <div class="widget-body">
                 <div id="dt_example" class="example_alt_pagination">
                   <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
-                    <ul id="myTab" class="nav nav-tabs">
-                      <li class="active">
-                        <a href="#home" data-toggle="tab">
-                          在职员工
-                        </a>
-                      </li>
-                      <li><a href="#ios" data-toggle="tab">离职员工</a></li>
-                    </ul>
-                    <!-- 添加员工按钮 -->
-                    <button class="btn btn-primary" onclick="location.href='employeeDetails.html'">添加员工</button>
-                    <div id="myTabContent1" class="tab-content">
-                      <div class="tab-pane fade in active" id="home">
-                        <!-- 在职员工 -->
-                        <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table1" aria-describedby="data-table_info">
+                    <!-- 添加排班按钮 -->
+                    <button class="btn btn-primary" href="#edit" data-toggle="modal"
+                            onclick="lick(this, this.id)">添加班次管理
+                    </button>
+                    <!-- 排班管理列表 -->
+                    <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
+                           id="data-table1" aria-describedby="data-table_info">
 
-                          <thead>
-                          <tr role="row">
-                            <th>
-                              编号
-                            </th>
-                            <th>
-                              员工姓名
-                            </th>
-                            <th>
-                              员工工号
-                            </th>
-                            <th>
-                              手机号
-                            </th>
-                            <th>
-                              所属部门
-                            </th>
-                            <th>
-                              职位
-                            </th>
-                            <th>
-                              班次
-                            </th>
-                            <th>
-                              等级
-                            </th>
-                            <th>
-                              员工状态
-                            </th>
-                            <th>
-                              操作
-                            </th>
-                          </tr>
-                          </thead>
+                      <thead>
+                      <tr role="row">
+                        <th>
+                          班次编号
+                        </th>
+                        <th>
+                          班次名称
+                        </th>
+                        <th>
+                          上班时间
+                        </th>
+                        <th>
+                          下班时间
+                        </th>
+                        <th>
+                          星期
+                        </th>
+                        <th>
+                          操作
+                        </th>
+                      </tr>
+                      </thead>
 
-                          <tbody id="table_on" role="alert" aria-live="polite" aria-relevant="all">
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="tab-pane fade" id="ios">
-                        <!-- 离职员工 -->
-                        <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table2" aria-describedby="data-table_info">
-
-                          <thead>
-                          <tr role="row">
-                            <th>
-                              编号
-                            </th>
-                            <th>
-                              员工姓名
-                            </th>
-                            <th>
-                              员工工号
-                            </th>
-                            <th>
-                              手机号
-                            </th>
-                            <th>
-                              所属部门
-                            </th>
-                            <th>
-                              职位
-                            </th>
-                            <th>
-                              班次
-                            </th>
-                            <th>
-                              等级
-                            </th>
-                            <th>
-                              员工状态
-                            </th>
-                            <th>
-                              操作
-                            </th>
-                          </tr>
-                          </thead>
-
-                          <tbody id="table_off" role="alert" aria-live="polite" aria-relevant="all">
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-
+                      <tbody id="table_department" role="alert" aria-live="polite" aria-relevant="all">
+                      </tbody>
+                    </table>
                   </div>
                   <div class="clearfix"></div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
-
-
       </div>
 
       <!-- 右边员工预览 -->
@@ -343,6 +277,82 @@
   <!--/.fluid-container-->
 </div>
 <!-- 主体内容 end -->
+<!-- 修改部门信息模态框 start -->
+<div id="edit" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+      ×
+    </button>
+    <h3>
+      <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
+      修改班次信息
+    </h3>
+  </div>
+  <form class="form-horizontal no-margin" onsubmit="return edit()">
+    <table>
+      <div class="modal-body">
+        <div class="tab-content" id="">
+          <div class="tab-pane fade active in">
+
+            <div class="control-group">
+              <label class="control-label" for="name">
+                班次名称
+              </label>
+              <div class="controls">
+                <input type="text" id="name" placeholder="请输入班次名称" onkeyup="edit()">
+                <span style="color: red;" id="span_name"></span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="on_time">
+                上班时间
+              </label>
+              <div class="controls">
+                <input type="datetime-local" id="on_time" onkeyup="edit()">
+                <span style="color: red;" id="span_on_time"></span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="off_time">
+                下班时间
+              </label>
+              <div class="controls">
+                <input type="datetime-local" id="off_time" onkeyup="edit()">
+                <span style="color: red;" id="span_off_time"></span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="week">
+                星期
+              </label>
+              <div class="controls">
+                <select name="type" id="week">
+                  <option value="">-- 请选择星期数 --</option>
+                  <option value="星期一">星期一</option>
+                  <option value="星期二">星期二</option>
+                  <option value="星期三">星期三</option>
+                  <option value="星期四">星期四</option>
+                  <option value="星期五">星期五</option>
+                  <option value="星期六">星期六</option>
+                  <option value="星期天">星期天</option>
+                </select>
+                <span style="color: red;" id="span_week"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="submit">
+          提交
+        </button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+          关闭
+        </button>
+      </div>
+    </table>
+  </form>
+</div>
 <!-- 修改密码模态框 start -->
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -357,7 +367,7 @@
   <form class="form-horizontal no-margin" onsubmit="return changePassword()">
     <table>
       <div class="modal-body">
-        <div class="tab-content" id="myTabContent2">
+        <div class="tab-content" id="myTabContent">
           <div id="step1" class="tab-pane fade active in">
 
             <div class="control-group">
@@ -374,7 +384,8 @@
                 修改密码
               </label>
               <div class="controls">
-                <input type="password" id="newPassword_1" placeholder="请输入要修改的密码" onkeyup="changePassword()">
+                <input type="password" id="newPassword_1" placeholder="请输入要修改的密码"
+                       onkeyup="changePassword()">
                 <span style="color: red;" id="span_newPassword_1"></span>
               </div>
             </div>
@@ -383,7 +394,8 @@
                 确认密码
               </label>
               <div class="controls">
-                <input type="password" id="newPassword_2" placeholder="请确认要修改的密码" onkeyup="changePassword()">
+                <input type="password" id="newPassword_2" placeholder="请确认要修改的密码"
+                       onkeyup="changePassword()">
                 <span style="color: red;" id="span_newPassword_2"></span>
               </div>
             </div>
@@ -405,7 +417,7 @@
 <!-- 底部footer start -->
 <footer>
   <p>
-    &copy; 雷格SS Copyright 2018 Powered by Bootstrap! F1.0  备：沪ICP备41749849号-3
+    &copy; 雷格SS Copyright 2018 Powered by Bootstrap! F1.0 备：沪ICP备41749849号-3
   </p>
 </footer>
 <!-- 底部footer end -->
@@ -426,60 +438,35 @@
 </script>
 <script>
   /*
-  * 页面加载自动执行方法
-  * 注意加载顺序！
-  * */
-
-  //加载*在职*员工信息列表
+   * 页面加载自动执行方法
+   * 注意加载顺序！
+   * */
+  //加载部门信息列表数据
   $(document).ready(function () {
-    getEmployee_on();
-  });
-  //加载*离职*员工信息列表
-  $(document).ready(function () {
-    getEmployee_off();
+    getDepartment();
   });
 
-  //Data Tables插件
+  //Data Tables
   $(document).ready(function () {
     $('#data-table1').dataTable({
       "sPaginationType": "full_numbers"
     });
-  })  ;
-  $(document).ready(function () {
-    $('#data-table2').dataTable({
-      "sPaginationType": "full_numbers"
-    });
   });
+
 </script>
 <script>
-  /*
-  * 加载*在职*员工信息列表方法：
-  *
-  * 传入值：
-  *   部门id：department_id
-  *   员工状态（在\离职）：status
-  * 返回值：
-  *   员工ID：id
-  *   员工姓名：name
-  *   员工工号：number
-  *   员工手机号：phone
-  *   员工所在部门：department
-  *   员工职位：position
-  *   员工班次：shift_id
-  *   员工等级：level
-  * */
-  function getEmployee_on() {
+  function getDepartment() {
     $.ajax({
-      cache: false,
-      type: "GET",
-      url:"data/employeeManage.txt",
-      data: 'department_id=1&&status=1',
-      dataType : 'json',
+      catch : false,
+      type : "GET",
+      url : "data/shiftManagement.txt",
+      data : "department_id=1",
+      dataType : "json",
       async : false,
-      error: function(request) {
+      error : function (request) {
         console.log(request.error);
       },
-      success: function(data) {
+      success : function (data) {
         var html = "";
         for(var i = 0;i < data.length;i++){
           html += "<tr>";
@@ -488,60 +475,92 @@
             html += data[i][attr];
             html += "</td>";
           }
-          html += "<td><span class=\"label label label-success\">在职</span></td>";
-          html += "<td><button class=\"btn btn-primary\">查看</button></td>";
+          html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">编辑 </button>";
+          html += "<button class=\"btn btn-danger\" onclick=\"del()\">删除</button> </td>";
           html += "</tr>";
         }
         //将拼接完成的table传入表格元素节点内
-        $('#table_on').append(html);
+        $("#table_department").append(html);
       }
-    });
+
+    })
   }
 
-  /*
-  * 加载*离职*员工信息列表方法：
-  *
-  * 传入值：
-  *   部门id：department_id
-  *   员工状态（在\离职）：status
-  * 返回值：
-  *   员工ID：id
-  *   员工姓名：name
-  *   员工工号：number
-  *   员工手机号：phone
-  *   员工所在部门：department
-  *   员工职位：position
-  *   员工班次：shift_id
-  *   员工等级：level
-  * */
-  function getEmployee_off() {
-    $.ajax({
-      cache: true,
-      type: "GET",
-      url:"data/employeeManage.txt",
-      data: 'department_id=1&&status=1',
-      dataType : 'json',
-      async : false,
-      error: function(request) {
-        console.log(request.error);
+  //Alertify JS插件初始化
+  reset = function () {
+    $("toggleCSS").href = "css/alertify.core.css";
+    alertify.set({
+      labels: {
+        cancel: "确认",
+        ok: "取消",
       },
-      success: function(data) {
-        var html = "";
-        for(var i = 0;i < data.length;i++){
-          html += "<tr>";
-          for(attr in data[i]){
-            html += "<td>";
-            html += data[i][attr];
-            html += "</td>";
-          }
-          html += "<td><span class=\"label label label-important\">离职</span></td>";
-          html += "<td><button class=\"btn btn-primary\">查看</button></td>";
-          html += "</tr>";
-        }
-        //将拼接完成的table传入表格元素节点内
-        $('#table_off').append(html);
+      delay: 5000,
+      buttonReverse: false,
+      buttonFocus: "ok"
+    });
+  };
+  //删除按钮点击事件
+  function del() {
+    reset();
+    alertify.confirm("确认删除该条记录吗？", function (e) {
+      if (e) {
+        //用户点击了取消按钮，不执行操作
+      } else {
+        alertify.success("删除成功");
       }
     });
+    return false;
+  }
+
+  function lick(obj, id) {
+    var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
+
+    var name = td_content.eq(1).text(); //获取当前行第二个td的值
+    var on_time = dateFormat(td_content.eq(2).text()); //获取当前行第二个td的值
+    var off_time = dateFormat(td_content.eq(3).text()); //获取当前行第二个td的值
+    var week = td_content.eq(4).text(); //获取当前行第二个td的值
+
+    document.getElementById('name').value = name;
+    document.getElementById('on_time').value = on_time;
+    document.getElementById('off_time').value = off_time;
+    document.getElementById('week').value = week;
+  }
+
+  //清除 span 提示文字
+  function resetEdit() {
+    document.getElementById("span_name").innerHTML = '';
+    document.getElementById("span_on_time").innerHTML = '';
+    document.getElementById("span_off_time").innerHTML = '';
+    document.getElementById("span_week").innerHTML = '';
+  }
+  ;
+
+  //隐藏编辑模态框时清除span
+  $('#edit').on('hide.bs.modal', function () {
+    resetEdit();
+  })
+
+  //编辑部门信息表单验证
+  function edit() {
+    resetEdit();
+    var name = document.getElementById('name').value;
+    var on_time = document.getElementById('on_time').value;
+    var off_time = document.getElementById('off_time').value;
+    var week = document.getElementById('week').value;
+    if (name == "") {
+      document.getElementById("span_name").innerHTML = '请输入班次名称';
+      return false;
+    } else if (on_time == "") {
+      document.getElementById("span_on_time").innerHTML = '请输入上班时间';
+      return false;
+    } else if (off_time == "") {
+      document.getElementById("span_off_time").innerHTML = '请输入下班时间';
+      return false;
+    } else if (week == "") {
+      document.getElementById("span_week").innerHTML = '请输入星期数';
+      return false;
+    }
+    return true;
   }
 </script>
 </body>

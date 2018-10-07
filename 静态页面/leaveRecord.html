@@ -89,12 +89,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="shift.html">
-                        <div class="fs1" aria-hidden="true" data-icon="&#xe077;"></div>
-                        排班设置
-                    </a>
-                </li>
-                <li>
                     <a href="department.html">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
                         部门信息
@@ -113,7 +107,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="shift.html">
+                    <a href="shiftManagement.html">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe075;"></div>
                         班次管理
                     </a>
@@ -636,17 +630,6 @@
             return false;
         }
         return true;
-    }
-    
-    function dateFormat(time) {
-        /*
-        * 时间格式化
-        * 转换前格式：2017-10-10 08:08
-        * 转换后：2017-10-10T08:08
-        * */
-        time = time.replace(' ','T');
-        console.log(time);
-        return time;
     }
 </script>
 </body>

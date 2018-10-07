@@ -16,9 +16,6 @@
 
 员工详情页面：employeeDetails.html
 
-员工排班设置：shift.html
-
-
 
 部门类：
 部门信息管理（超级管理员可访问）：department.html
@@ -33,7 +30,7 @@
 
 
 班次管理：
-*班次管理:shift.html
+*班次管理:shiftManagement.html
 *调班申请:shiftApply.html
 
 
