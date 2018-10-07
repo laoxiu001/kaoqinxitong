@@ -24,7 +24,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        考勤系统-请假类别
+        考勤系统-考勤结果
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="leaveRecord.html" class="selected">
+                    <a href="leaveRecord.html">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0e4;"></div>
                         请假管理
                     </a>
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="result.html">
+                    <a href="result.html" class="selected">
                         <div class="fs1" aria-hidden="true" data-icon="&#xe0b8;"></div>
                         考勤结果管理
                     </a>
@@ -137,16 +137,7 @@
         <!--头部副导航栏-->
         <div class="sub-nav">
             <ul>
-                <li>
-                    <a href="leaveRecord.html">
-                        请假记录
-                    </a>
-                </li>
-                <li>
-                    <a href="leaveType.html" class="heading">
-                        请假类别管理
-                    </a>
-                </li>
+                <li><a href="result.html" class="heading">考勤结果</a></li>
             </ul>
         </div>
         <div class="dashboard-wrapper">
@@ -155,11 +146,11 @@
                 <div class="row-fluid">
 
                     <div class="span12">
-                        <!-- 部门信息 -->
+                        <!-- 考勤结果管理 -->
                         <div class="widget">
                             <div class="widget-header">
                                 <div class="title" id="list">
-                                    请假记录
+                                    考勤结果
                                 </div>
                                 <span class="tools">
                       <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
@@ -168,20 +159,20 @@
                             <div class="widget-body">
                                 <div id="dt_example" class="example_alt_pagination">
                                     <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
-                                        <!-- 请假记录列表 -->
+                                        <!-- 排班管理列表 -->
                                         <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
                                                id="data-table1" aria-describedby="data-table_info">
 
                                             <thead>
                                             <tr role="row">
                                                 <th>
-                                                    类别编号
+                                                    考勤结果编号
                                                 </th>
                                                 <th>
-                                                    类别名称
+                                                    考勤结果名称
                                                 </th>
                                                 <th>
-                                                    处理方式
+                                                    迟到分钟数
                                                 </th>
                                                 <th>
                                                     操作
@@ -189,7 +180,7 @@
                                             </tr>
                                             </thead>
 
-                                            <tbody id="table_record" role="alert" aria-live="polite" aria-relevant="all">
+                                            <tbody id="table_department" role="alert" aria-live="polite" aria-relevant="all">
                                             </tbody>
                                         </table>
                                     </div>
@@ -275,7 +266,7 @@
     <!--/.fluid-container-->
 </div>
 <!-- 主体内容 end -->
-<!-- 请假审核模态框 start -->
+<!-- 修改部门信息模态框 start -->
 <div id="edit" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -283,7 +274,7 @@
         </button>
         <h3>
             <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
-            请假记录审核
+            修改考勤结果
         </h3>
     </div>
     <form class="form-horizontal no-margin" onsubmit="return edit()">
@@ -294,20 +285,20 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
-                                类别名称
+                                考勤结果名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入类别名称" onkeyup="edit()">
+                                <input type="text" id="name" placeholder="请输入考勤结果名称" onkeyup="edit()">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="type">
-                                处理方式
+                            <label class="control-label" for="minutes">
+                                迟到分钟数
                             </label>
                             <div class="controls">
-                                <input type="text" id="type" placeholder="请输入处理方式" onkeyup="edit()">
-                                <span style="color: red;" id="span_type"></span>
+                                <input type="text" id="minutes" placeholder="请输入迟到分钟数" onkeyup="edit()">
+                                <span style="color: red;" id="span_minutes"></span>
                             </div>
                         </div>
                     </div>
@@ -414,7 +405,7 @@
      * */
     //加载部门信息列表数据
     $(document).ready(function () {
-        getLeave_record();
+        getDepartment();
     });
 
     //Data Tables
@@ -426,11 +417,11 @@
 
 </script>
 <script>
-    function getLeave_record() {
+    function getDepartment() {
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/leaveType.txt",
+            url : "data/result.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
@@ -451,7 +442,7 @@
                     html += "</tr>";
                 }
                 //将拼接完成的table传入表格元素节点内
-                $("#table_record").append(html);
+                $("#table_department").append(html);
             }
 
         })
@@ -487,16 +478,16 @@
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
-        var type = td_content.eq(2).text(); //获取当前行第二个td的值
+        var minutes = dateFormat(td_content.eq(2).text()); //获取当前行第二个td的值
 
         document.getElementById('name').value = name;
-        document.getElementById('type').value = type;
+        document.getElementById('minutes').value = minutes;
     }
 
     //清除 span 提示文字
     function resetEdit() {
-        document.getElementById('span_name').innerHTML = '';
-        document.getElementById('span_type').innerHTML = '';
+        document.getElementById("span_name").innerHTML = '';
+        document.getElementById("span_minutes").innerHTML = '';
     }
     ;
 
@@ -509,27 +500,15 @@
     function edit() {
         resetEdit();
         var name = document.getElementById('name').value;
-        var user_id = document.getElementById('type').value;
-
+        var minutes = document.getElementById('minutes').value;
         if (name == "") {
-            document.getElementById("span_name").innerHTML = '请输入类别名称';
+            document.getElementById("span_name").innerHTML = '请输入考勤结果';
             return false;
-        } else if (user_id == "") {
-            document.getElementById("span_type").innerHTML = '请输入处理方式';
+        } else if (minutes == "") {
+            document.getElementById("span_minutes").innerHTML = '请输入迟到分钟数';
             return false;
         }
         return true;
-    }
-    
-    function dateFormat(time) {
-        /*
-        * 时间格式化
-        * 转换前格式：2017-10-10 08:08
-        * 转换后：2017-10-10T08:08
-        * */
-        time = time.replace(' ','T');
-        console.log(time);
-        return time;
     }
 </script>
 </body>
