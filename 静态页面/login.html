@@ -115,7 +115,7 @@
                                                 </div>
                                             </div>
                                             <div class="actions">
-                                                <input class="btn btn-danger" name="Login" type="submit" value="登陆"
+                                                <input class="btn btn-danger" name="Login" type="button" onclick="login ()" value="登陆"
                                                        id="loginBtn">
                                                 <a class="link" href="#">忘记密码</a>
                                                 <div class="clearfix"></div>
@@ -175,7 +175,7 @@
     };
 
     //登陆按钮点击事件
-    $('#loginForm').submit(function () {
+    function login () {
         //获取表单数据
         var loginFormJson = $('#loginForm').serializeArray();
         //构造请求参数
@@ -185,17 +185,12 @@
         };
         $.ajax({
             catch: false,
-            type: "GET",
+            type: "POST",
             url: "/login/testLogin",
             data: loginSubmitJson,
-            dataType: "json",
             async: false,
-            error: function (request) {
-                console.log('err', request.error);
-            },
             success: function (data) {
-                console.log('data', data);
-                if (data == 'login') {
+                if (data == "login") {
                     //登陆失败
                     message('error', '登陆失败');
                     return false;
@@ -206,7 +201,7 @@
             }
         })
 
-    });
+    };
 </script>
 </body>
 </html>
