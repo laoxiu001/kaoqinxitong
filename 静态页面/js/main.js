@@ -44,10 +44,8 @@ function resetMessage(){
     result = 'success';
     message = '登陆成功';
 }
-function message(){
+function message(result,message){
     /* 全局定义变量 message */
-    result = 'success';
-    message = '登陆成功'
     if(result != '' && message != ''){
         if(result == 'success'){
             resetMessage();
