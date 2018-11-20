@@ -40,7 +40,7 @@
     <![endif]-->
 
 </head>
-<body onload="message();">
+<body onload="message('success','跳转成功');">
 <!-- 头部状态栏 start -->
 <header>
   <a href="#" class="logo">
@@ -199,14 +199,14 @@
                 <div class="span10">
                   <div class="sign-in-container">
                     <!-- 员工信息框 -->
-                    <form action="#" class="form-horizontal span12" method="post" onsubmit="return punch()">
+                    <form action="#" class="form-horizontal span12" id="punchForm">
                       <div class="span8">
                         <div class="control-group">
                           <label class="control-label">
                             员工工号：
                           </label>
                           <div class="controls controls-row">
-                            <input class="span6" id="inf_number" type="text" readonly>
+                            <input class="span6" id="inf_number" type="text" name="userId" readonly>
                           </div>
                         </div>
                         <div class="control-group">
@@ -270,7 +270,7 @@
                       <div class="span8">
                         <div class="control-group">
                           <div class="controls controls-row">
-                            <button class="btn btn-success">打卡</button>
+                            <button class="btn btn-success" type="button" onclick="punch()">打卡</button>
                             <span style="color: red;" id="span_punch"></span>
                           </div>
                         </div>
@@ -460,7 +460,7 @@ function search_ajax() {
   $.ajax({
     cache: false,
     type: "GET",
-    url:"data/punch.txt",
+    url:"static/data/punch.txt",
     data: 'search_number=' + search_number,
     dataType : 'json',
     async : false,
@@ -507,7 +507,32 @@ function search_ajax() {
         document.getElementById("span_punch").innerHTML='员工工号为空';
         return false;
       }
-      return true;
+      //获取表单数据
+      var punchFormJson = $('#punchForm').serializeArray();
+      //构造请求参数
+      var punchSubmitJson = {
+        userId: parseInt(punchFormJson[0].value,10),
+        address: '重庆市永川区重庆文理学院'
+      };
+      $.ajax({
+        catch: false,
+        type: "POST",
+        url: "/attend/insert",
+        data: punchSubmitJson,
+        async: false,
+        success: function (data) {
+          if (data == "SUCCESS") {
+            //打卡成功
+            message('success', '打卡成功');
+          } else if(data == "fail"){
+            //打卡失败
+            message('error', '打卡失败');
+          }else {
+            //其他错误信息
+            message('error', 'data');
+          }
+        }
+      })
     }
 </script>
 </body>
