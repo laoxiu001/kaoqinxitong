@@ -298,7 +298,7 @@
                                 部门名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入部门名称" onkeyup="edit()">
+                                <input type="text" id="name" placeholder="请输入部门名称" name="name">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
@@ -307,7 +307,7 @@
                                 打卡地址
                             </label>
                             <div class="controls">
-                                <input type="text" id="address" placeholder="请输入打卡地址" onkeyup="edit()">
+                                <input type="text" id="address" placeholder="请输入打卡地址" name="address">
                                 <span style="color: red;" id="span_address"></span>
                             </div>
                         </div>
@@ -330,7 +330,7 @@
                                 部门员工数
                             </label>
                             <div class="controls">
-                                <input type="text" id="number" value="员工数" onkeyup="edit()" readonly>
+                                <input type="text" id="number" name="number" value="员工数" readonly>
                                 <span style="color: red;" id="span_number"></span>
                             </div>
                         </div>
@@ -370,7 +370,7 @@
                                 当前密码
                             </label>
                             <div class="controls">
-                                <input type="password" id="password" placeholder="请输入当前密码" onkeyup="changePassword()">
+                                <input type="password" id="password" placeholder="请输入当前密码">
                                 <span style="color: red;" id="span_password"></span>
                             </div>
                         </div>
@@ -379,8 +379,7 @@
                                 修改密码
                             </label>
                             <div class="controls">
-                                <input type="password" id="newPassword_1" placeholder="请输入要修改的密码"
-                                       onkeyup="changePassword()">
+                                <input type="password" id="newPassword_1" placeholder="请输入要修改的密码">
                                 <span style="color: red;" id="span_newPassword_1"></span>
                             </div>
                         </div>
@@ -389,8 +388,7 @@
                                 确认密码
                             </label>
                             <div class="controls">
-                                <input type="password" id="newPassword_2" placeholder="请确认要修改的密码"
-                                       onkeyup="changePassword()">
+                                <input type="password" id="newPassword_2" placeholder="请确认要修改的密码">
                                 <span style="color: red;" id="span_newPassword_2"></span>
                             </div>
                         </div>
@@ -454,7 +452,7 @@
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/department.txt",
+            url : "static/data/department.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
