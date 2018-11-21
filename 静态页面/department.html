@@ -556,10 +556,10 @@
         var departmentFormJson = $('#departmentForm').serializeArray();
         //构造请求参数
         var departmentSubmitJson = {
-            name: parseInt(departmentFormJson[0].value, 10),
-            address: parseInt(departmentFormJson[1].value, 10),
-            type: parseInt(departmentFormJson[2].value, 10),
-            number: parseInt(departmentFormJson[3].value, 10)
+            name: departmentFormJson[0].value,
+            address: departmentFormJson[1].value,
+            type: departmentFormJson[2].value,
+            number: parseInt(departmentFormJson[3].value)
         };
         $.ajax({
             catch: false,
