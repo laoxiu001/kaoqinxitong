@@ -37,7 +37,32 @@ function changePassword() {
         document.getElementById("span_newPassword_2").innerHTML='两次密码不一致';
         return false;
     }
-    return true;
+    //获取表单数据
+    var passwordFormJson = $('#passwordForm').serializeArray();
+    //构造请求参数
+    var passwordSubmitJson = {
+        currencyPassword: parseInt(passwordFormJson[0].value,10),
+        newPassword: parseInt(passwordFormJson[1].value,10)
+    };
+    $.ajax({
+        catch: false,
+        type: "POST",
+        url: "/attend/insert",
+        data: passwordSubmitJson,
+        async: false,
+        success: function (data) {
+            if (data == "SUCCESS") {
+                //成功
+                message('success', '打卡成功');
+            } else if(data == "fail"){
+                //失败
+                message('error', '打卡失败');
+            }else {
+                //其他错误信息
+                message('error', 'data');
+            }
+        }
+    });
 }
 function resetMessage(){
     /* 全局定义变量 message */
