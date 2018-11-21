@@ -41,8 +41,8 @@ function changePassword() {
     var passwordFormJson = $('#passwordForm').serializeArray();
     //构造请求参数
     var passwordSubmitJson = {
-        currencyPassword: parseInt(passwordFormJson[0].value,10),
-        newPassword: parseInt(passwordFormJson[1].value,10)
+        currencyPassword: passwordFormJson[0].value,
+        newPassword: passwordFormJson[1].value
     };
     $.ajax({
         catch: false,
