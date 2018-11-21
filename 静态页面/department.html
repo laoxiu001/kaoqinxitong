@@ -387,7 +387,8 @@
                                 确认密码
                             </label>
                             <div class="controls">
-                                <input type="password" id="newPassword_2" name="confirmPassword" placeholder="请确认要修改的密码">
+                                <input type="password" id="newPassword_2" name="confirmPassword"
+                                       placeholder="请确认要修改的密码">
                                 <span style="color: red;" id="span_newPassword_2"></span>
                             </div>
                         </div>
@@ -468,7 +469,7 @@
                         html += "</td>";
                     }
                     html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">编辑 </button>";
-                    html += "<button class=\"btn btn-danger\" onclick=\"del()\">删除</button> </td>";
+                    html += "<button class=\"btn btn-danger\" onclick=\"del(this)\">删除</button> </td>";
                     html += "</tr>";
                 }
                 //将拼接完成的table传入表格元素节点内
@@ -492,12 +493,36 @@
         });
     };
     //删除按钮点击事件
-    function del() {
+    function del(obj) {
         reset();
         alertify.confirm("确认删除该条记录吗？", function (e) {
             if (e) {
                 //用户点击了取消按钮，不执行操作
             } else {
+                var id = parseInt($(obj).parents("td").parents("tr").children("td").eq(0).text());
+                console.log('删除id = ', id);
+                var deleteSubmitJson = {
+                    id: id
+                }
+                $.ajax({
+                    catch: false,
+                    type: "POST",
+                    url: "/attend/insert",
+                    data: deleteSubmitJson,
+                    async: false,
+                    success: function (data) {
+                        if (data == "SUCCESS") {
+                            //删除成功
+                            message('success', '成功');
+                        } else if (data == "fail") {
+                            //删除失败
+                            message('error', '失败');
+                        } else {
+                            //其他错误信息
+                            message('error', 'data');
+                        }
+                    }
+                })
                 alertify.success("删除成功");
             }
         });
