@@ -281,7 +281,7 @@
             修改班次信息
         </h3>
     </div>
-    <form class="form-horizontal no-margin" onsubmit="return edit()">
+    <form class="form-horizontal no-margin" id="shiftForm">
         <table>
             <div class="modal-body">
                 <div class="tab-content" id="">
@@ -289,10 +289,19 @@
 
                         <div class="control-group">
                             <label class="control-label" for="apply_name">
+                                申请编号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="id" placeholder="班次名称申请编号" name="id">
+                                <span style="color: red;" id="span_id"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="apply_name">
                                 申请人姓名
                             </label>
                             <div class="controls">
-                                <input type="text" id="apply_name" placeholder="班次名称申请人姓名">
+                                <input type="text" id="apply_name" placeholder="班次名称申请人姓名" name="apply_name">
                                 <span style="color: red;" id="span_apply_name"></span>
                             </div>
                         </div>
@@ -301,7 +310,7 @@
                                 调换对象姓名
                             </label>
                             <div class="controls">
-                                <input type="text" id="It_name" placeholder="调换对象姓名">
+                                <input type="text" id="It_name" placeholder="调换对象姓名" name="It_name">
                                 <span style="color: red;" id="span_It_name"></span>
                             </div>
                         </div>
@@ -322,7 +331,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" type="button" onclick="edit()">
                     提交
                 </button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">
@@ -436,7 +445,7 @@
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/shiftApply.txt",
+            url : "static/data/shiftApply.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
@@ -492,10 +501,12 @@
     function lick(obj, id) {
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
+        var id = td_content.eq(0).text(); //获取当前行第二个td的值
         var apply_name = td_content.eq(1).text(); //获取当前行第二个td的值
         var It_name = dateFormat(td_content.eq(2).text()); //获取当前行第二个td的值
         var status = dateFormat(td_content.eq(3).text()); //获取当前行第二个td的值
 
+        document.getElementById('id').value = id;
         document.getElementById('apply_name').value = apply_name;
         document.getElementById('It_name').value = It_name;
         document.getElementById('status').value = status;
@@ -530,7 +541,34 @@
             document.getElementById("span_status").innerHTML = '请选择审核状态';
             return false;
         }
-        return true;
+        //获取表单数据
+        var shiftFormJson = $('#shiftForm').serializeArray();
+        //构造请求参数
+        var shiftFormSubmitJson = {
+            id: parseInt(shiftFormJson[0].value),
+            apply_name: shiftFormJson[1].value,
+            It_name: shiftFormJson[2].value,
+            status: shiftFormJson[3].value
+        };
+        $.ajax({
+            catch: false,
+            type: "POST",
+            url: "/attend/insert",
+            data: shiftFormSubmitJson,
+            async: false,
+            success: function (data) {
+                if (data == "SUCCESS") {
+                    //打卡成功
+                    message('success', '成功');
+                } else if (data == "fail") {
+                    //打卡失败
+                    message('error', '失败');
+                } else {
+                    //其他错误信息
+                    message('error', 'data');
+                }
+            }
+        })
     }
 </script>
 </body>

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36fddab1-fd43-4bcf-bcac-137fc314c6b5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/静态页面/department.html" afterPath="$PROJECT_DIR$/静态页面/department.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/静态页面/leaveRecord.html" afterPath="$PROJECT_DIR$/静态页面/leaveRecord.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/静态页面/position.html" afterPath="$PROJECT_DIR$/静态页面/position.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/静态页面/shiftApply.html" afterPath="$PROJECT_DIR$/静态页面/shiftApply.html" />
     </list>
     <ignored path="kaoqinxitong.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leaveRecord.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="leaveRecord.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/静态页面/leaveRecord.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="646" column="54" selection-start-line="646" selection-start-column="54" selection-end-line="646" selection-end-column="54" />
+            <state relative-caret-position="533">
+              <caret line="671" column="10" selection-start-line="640" selection-start-column="8" selection-end-line="671" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -55,6 +52,22 @@
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1542885561145" expanded="true" signature="892:906" ph="..." />
                 <marker date="1542885561145" expanded="true" signature="21455:21467" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shiftApply.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/静态页面/shiftApply.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="334" column="22" selection-start-line="334" selection-start-column="22" selection-end-line="334" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1542886281136" expanded="true" signature="892:906" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,7 +114,6 @@
         <option value="$PROJECT_DIR$/静态页面/login.html" />
         <option value="$PROJECT_DIR$/静态页面/static/data/punch.txt" />
         <option value="$PROJECT_DIR$/静态页面/punch.html" />
-        <option value="$PROJECT_DIR$/静态页面/shiftApply.html" />
         <option value="$PROJECT_DIR$/静态页面/result.html" />
         <option value="$PROJECT_DIR$/静态页面/leaveType.html" />
         <option value="$PROJECT_DIR$/静态页面/employeeManage.html" />
@@ -110,6 +122,7 @@
         <option value="$PROJECT_DIR$/静态页面/position.html" />
         <option value="$PROJECT_DIR$/静态页面/department.html" />
         <option value="$PROJECT_DIR$/静态页面/leaveRecord.html" />
+        <option value="$PROJECT_DIR$/静态页面/shiftApply.html" />
       </list>
     </option>
   </component>
@@ -188,6 +201,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="静态页面" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kaoqinxitong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kaoqinxitong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="静态页面" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kaoqinxitong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kaoqinxitong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="静态页面" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -715,12 +768,12 @@
       <workItem from="1542671600142" duration="1877000" />
       <workItem from="1542773294410" duration="811000" />
       <workItem from="1542794887518" duration="5621000" />
-      <workItem from="1542882677246" duration="2885000" />
+      <workItem from="1542882677246" duration="3612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119612000" />
+    <option name="totallyTimeSpent" value="120339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -854,13 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/静态页面/shiftApply.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1590">
-          <caret line="297" column="30" selection-start-line="297" selection-start-column="30" selection-end-line="297" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/静态页面/employeeManage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4089">
@@ -915,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/静态页面/leaveRecord.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="646" column="54" selection-start-line="646" selection-start-column="54" selection-end-line="646" selection-end-column="54" />
+        <state relative-caret-position="533">
+          <caret line="671" column="10" selection-start-line="640" selection-start-column="8" selection-end-line="671" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -929,6 +975,20 @@
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1542885561145" expanded="true" signature="892:906" ph="..." />
             <marker date="1542885561145" expanded="true" signature="21455:21467" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/静态页面/shiftApply.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="334" column="22" selection-start-line="334" selection-start-column="22" selection-end-line="334" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#table#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1542886281136" expanded="true" signature="892:906" ph="..." />
           </folding>
         </state>
       </provider>
