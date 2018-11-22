@@ -301,7 +301,7 @@
             请假记录审核
         </h3>
     </div>
-    <form class="form-horizontal no-margin" onsubmit="return edit()">
+    <form class="form-horizontal no-margin" id="leaveForm">
         <table>
             <div class="modal-body">
                 <div class="tab-content" id="">
@@ -309,10 +309,19 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
+                                记录编号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="id" placeholder="请输入记录编号" name="id">
+                                <span style="color: red;" id="span_id"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="name">
                                 员工姓名
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入员工姓名">
+                                <input type="text" id="name" placeholder="请输入员工姓名" name="name">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
@@ -321,7 +330,7 @@
                                 员工编号
                             </label>
                             <div class="controls">
-                                <input type="text" id="user_id" placeholder="请输入员工编号">
+                                <input type="text" id="user_id" placeholder="请输入员工编号" name="user_id">
                                 <span style="color: red;" id="span_user_id"></span>
                             </div>
                         </div>
@@ -330,7 +339,7 @@
                                 请假类型
                             </label>
                             <div class="controls">
-                                <select name="type" id="leave_type">
+                                <select name="type" id="leave_type" name="leave_type">
                                     <option value="">-- 请选择请假类型 --</option>
                                     <option value="事假">事假</option>
                                     <option value="病假">病假</option>
@@ -344,7 +353,7 @@
                                 开始时间
                             </label>
                             <div class="controls">
-                                <input type="datetime-local" id="leava_start">
+                                <input type="datetime-local" id="leava_start" name="leava_start">
                                 <span style="color: red;" id="span_leava_start"></span>
                             </div>
                         </div>
@@ -353,7 +362,7 @@
                                 结束时间
                             </label>
                             <div class="controls">
-                                <input type="datetime-local" id="leava_stop">
+                                <input type="datetime-local" id="leava_stop" name="leava_stop">
                                 <span style="color: red;" id="span_leava_stop"></span>
                             </div>
                         </div>
@@ -362,7 +371,7 @@
                                 审核情况
                             </label>
                             <div class="controls">
-                                <select name="type" id="status">
+                                <select name="type" id="status" name="status">
                                     <option value="待审核">待审核</option>
                                     <option value="通过">通过</option>
                                     <option value="不通过">不通过</option>
@@ -375,7 +384,7 @@
                                 请假理由
                             </label>
                             <div class="controls">
-                                <textarea name="reason" cols="1" rows="2" id="reason"></textarea>
+                                <textarea name="reason" cols="1" rows="2" id="reason" dirname="reason"></textarea>
                                 <span style="color: red;" id="span_reason"></span>
                             </div>
                         </div>
@@ -383,7 +392,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" type="button" onclick="edit()">
                     提交
                 </button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">
@@ -497,7 +506,7 @@
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/leaveRecord.txt",
+            url : "static/data/leaveRecord.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
@@ -564,6 +573,7 @@
     function lick(obj, id) {
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
+        var id = td_content.eq(0).text(); //获取当前行第二个td的值
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
         var user_id = td_content.eq(2).text(); //获取当前行第二个td的值
         var leave_type = td_content.eq(3).text(); //获取当前行第二个td的值
@@ -572,6 +582,7 @@
         var status = td_content.eq(6).text(); //获取当前行第二个td的值
         var reason = td_content.eq(7).text(); //获取当前行第二个td的值
 
+        document.getElementById('id').value = id;
         document.getElementById('name').value = name;
         document.getElementById('user_id').value = user_id;
         document.getElementById('leave_type').value = leave_type;
@@ -627,7 +638,38 @@
             document.getElementById("span_reason").innerHTML = '请输入请假理由';
             return false;
         }
-        return true;
+        //获取表单数据
+        var leaveFormJson = $('#leaveForm').serializeArray();
+        //构造请求参数
+        var leaveFormSubmitJson = {
+            id: leaveFormJson[0].value,
+            name: leaveFormJson[1].value,
+            user_id: leaveFormJson[2].value,
+            leave_type: leaveFormJson[3].value,
+            leava_start: leaveFormJson[4].value,
+            leava_stop: leaveFormJson[5].value,
+            status: leaveFormJson[6].value,
+            reason: leaveFormJson[7].value
+        };
+        $.ajax({
+            catch: false,
+            type: "POST",
+            url: "/attend/insert",
+            data: leaveFormSubmitJson,
+            async: false,
+            success: function (data) {
+                if (data == "SUCCESS") {
+                    //打卡成功
+                    message('success', '成功');
+                } else if (data == "fail") {
+                    //打卡失败
+                    message('error', '失败');
+                } else {
+                    //其他错误信息
+                    message('error', 'data');
+                }
+            }
+        })
     }
 </script>
 </body>
