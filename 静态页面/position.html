@@ -284,7 +284,7 @@
             修改部门信息
         </h3>
     </div>
-    <form class="form-horizontal no-margin" onsubmit="return edit()">
+    <form class="form-horizontal no-margin" id="positionForm">
         <table>
             <div class="modal-body">
                 <div class="tab-content" id="">
@@ -295,7 +295,7 @@
                                 职位名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入职位名称">
+                                <input type="text" id="name" placeholder="请输入职位名称" name="name">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
@@ -304,7 +304,7 @@
                                 所属企业机构
                             </label>
                             <div class="controls">
-                                <select name="type" id="mechanism_id">
+                                <select name="mechanism" id="mechanism_id">
                                     <option value="">-- 请选择企业机构 --</option>
                                     <option value="人事部门">人事部门</option>
                                     <option value="企业部门">企业部门</option>
@@ -318,7 +318,7 @@
                                 职位权限
                             </label>
                             <div class="controls">
-                                <select name="type" id="permission_id">
+                                <select name="permission" id="permission_id" name="">
                                     <option value="普通用户">普通用户</option>
                                     <option value="管理员">管理员</option>
                                 </select>
@@ -329,7 +329,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" type="button" onclick="edit()">
                     提交
                 </button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">
@@ -460,7 +460,7 @@
                         html += "</td>";
                     }
                     html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">编辑 </button>";
-                    html += "<button class=\"btn btn-danger\" onclick=\"del()\">删除</button> </td>";
+                    html += "<button class=\"btn btn-danger\" onclick=\"del(this)\">删除</button> </td>";
                     html += "</tr>";
                 }
                 //将拼接完成的table传入表格元素节点内
@@ -484,12 +484,36 @@
         });
     };
     //删除按钮点击事件
-    function del() {
+    function del(obj) {
         reset();
         alertify.confirm("确认删除该条记录吗？", function (e) {
             if (e) {
                 //用户点击了取消按钮，不执行操作
             } else {
+                var id = parseInt($(obj).parents("td").parents("tr").children("td").eq(0).text());
+                console.log('删除id = ', id);
+                var deleteSubmitJson = {
+                    id: id
+                }
+                $.ajax({
+                    catch: false,
+                    type: "POST",
+                    url: "/attend/insert",
+                    data: deleteSubmitJson,
+                    async: false,
+                    success: function (data) {
+                        if (data == "SUCCESS") {
+                            //删除成功
+                            message('success', '成功');
+                        } else if (data == "fail") {
+                            //删除失败
+                            message('error', '失败');
+                        } else {
+                            //其他错误信息
+                            message('error', 'data');
+                        }
+                    }
+                })
                 alertify.success("删除成功");
             }
         });
@@ -537,7 +561,33 @@
             document.getElementById("span_type").innerHTML = '请选择职位权限';
             return false;
         }
-        return true;
+        //获取表单数据
+        var positionFormJson = $('#positionForm').serializeArray();
+        //构造请求参数
+        var positionSubmitJson = {
+            name: positionFormJson[0].value,
+            mechanism: positionFormJson[1].value,
+            permission: positionFormJson[2].value,
+        };
+        $.ajax({
+            catch: false,
+            type: "POST",
+            url: "/attend/insert",
+            data: positionSubmitJson,
+            async: false,
+            success: function (data) {
+                if (data == "SUCCESS") {
+                    //打卡成功
+                    message('success', '成功');
+                } else if (data == "fail") {
+                    //打卡失败
+                    message('error', '失败');
+                } else {
+                    //其他错误信息
+                    message('error', 'data');
+                }
+            }
+        })
     }
 </script>
 </body>
