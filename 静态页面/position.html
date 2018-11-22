@@ -292,6 +292,15 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
+                                职位编号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="id" placeholder="请输入职位编号" name="id">
+                                <span style="color: red;" id="id_name"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="name">
                                 职位名称
                             </label>
                             <div class="controls">
@@ -523,10 +532,12 @@
     function lick(obj, id) {
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
+        var id = td_content.eq(0).text(); //获取当前行第二个td的值
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
         var mechanism_id = td_content.eq(2).text(); //获取当前行第二个td的值
         var permission_id = td_content.eq(3).text(); //获取当前行第二个td的值
 
+        document.getElementById('id').value = id;
         document.getElementById('name').value = name;
         document.getElementById('mechanism_id').value = mechanism_id;
         document.getElementById('permission_id').value = permission_id;
@@ -565,9 +576,10 @@
         var positionFormJson = $('#positionForm').serializeArray();
         //构造请求参数
         var positionSubmitJson = {
-            name: positionFormJson[0].value,
-            mechanism: positionFormJson[1].value,
-            permission: positionFormJson[2].value,
+            id: positionFormJson[0].value,
+            name: positionFormJson[1].value,
+            mechanism: positionFormJson[2].value,
+            permission: positionFormJson[3].value,
         };
         $.ajax({
             catch: false,

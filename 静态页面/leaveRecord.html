@@ -642,9 +642,9 @@
         var leaveFormJson = $('#leaveForm').serializeArray();
         //构造请求参数
         var leaveFormSubmitJson = {
-            id: leaveFormJson[0].value,
+            id: parseInt(leaveFormJson[0].value),
             name: leaveFormJson[1].value,
-            user_id: leaveFormJson[2].value,
+            user_id: parseInt(leaveFormJson[2].value),
             leave_type: leaveFormJson[3].value,
             leava_start: leaveFormJson[4].value,
             leava_stop: leaveFormJson[5].value,
