@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+
+<![endif]-->
+<!--[if IE 7]>
+
+<html class="lt-ie9 lt-ie8" lang="en">
+
+<![endif]-->
+<!--[if IE 8]>
+
+<html class="lt-ie9" lang="en">
+
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+
+<html lang="en">
+
+<!--
+<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>
+        考勤系统-考勤管理
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+
+    <link href="static/icomoon/style.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <!-- Important. For Theming change primary-color variable in main.css  -->
+    <link href="static/css/alertify.core.css" rel="stylesheet" id="toggleCSS">
+    <!--[if lte IE 7]>
+    <script src="static/css/icomoon-font/lte-ie7.js">
+    </script>
+    <![endif]-->
+
+</head>
+<body onload="message('success','跳转成功');">
+<!-- 头部状态栏 start -->
+<header>
+    <a href="#" class="logo">
+        <img src="static/img/logo.png" alt="Logo"/>
+    </a>
+    <div class="btn-group">
+        <button class="btn btn-primary">
+            早上好，admin ！
+        </button>
+        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+          <span class="caret">
+          </span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li>
+                <a href="#myModal" role="button" data-toggle="modal">
+                    修改密码
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    注销账户
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<!-- 头部状态栏 end -->
+<!-- 主体内容 start -->
+<div class="container-fluid">
+    <div class="dashboard-container">
+        <!--头部主导航栏-->
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="punch.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+                        打卡测试
+                    </a>
+                </li>
+                <li>
+                    <a href="employeeManage.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe072;"></div>
+                        员工信息
+                    </a>
+                </li>
+                <li>
+                    <a href="department.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
+                        部门信息
+                    </a>
+                </li>
+                <li>
+                    <a href="position.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe073;"></div>
+                        职位管理
+                    </a>
+                </li>
+                <li>
+                    <a href="leaveRecord.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0e4;"></div>
+                        请假管理
+                    </a>
+                </li>
+                <li>
+                    <a href="shiftManagement.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe075;"></div>
+                        班次管理
+                    </a>
+                </li>
+                <li>
+                    <a href="attence.html" class="selected">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe096;"></div>
+                        考勤管理
+                    </a>
+                </li>
+                <li>
+                    <a href="result.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0b8;"></div>
+                        考勤结果管理
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix">
+            </div>
+        </div>
+        <!--头部副导航栏-->
+        <div class="sub-nav">
+            <ul>
+                <li><a href="#" class="heading">员工信息</a></li>
+            </ul>
+        </div>
+        <div class="dashboard-wrapper">
+            <div class="left-sidebar">
+
+                <div class="row-fluid">
+
+                    <div class="span12">
+                        <!-- 员工信息 -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <div class="title" id="list">
+                                    考勤管理
+                                </div>
+                                <span class="tools">
+                      <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
+                    </span>
+                            </div>
+                            <div class="widget-body">
+                                <div id="dt_example" class="example_alt_pagination">
+                                    <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
+
+                                        <!-- 图表1 -->
+                                        <div id="main1" style="width: 80%;height:400px;"></div>
+
+                                        <!-- 图表1 -->
+                                        <div id="main2" style="width: 80%;height:400px;"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- 右边员工预览 -->
+            <div class="right-sidebar">
+                <div class="wrapper">
+                    <ul class="stats">
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe000;"></div>
+                                        <p class="pull-left">&nbsp;部门员工数：</p>
+                                        <h3 class="pull-right">15,859</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe01b;"></div>
+                                        <p class="pull-left">&nbsp;今日应到人数：</p>
+                                        <h3 class="pull-right">15,857</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe070;"></div>
+                                        <p class="pull-left">&nbsp;今日实到人数：</p>
+                                        <h3 class="pull-right">15,853</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe006;"></div>
+                                        <p class="pull-left">&nbsp;请假人数：</p>
+                                        <h3 class="pull-right">2</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe04b;"></div>
+                                        <p class="pull-left">&nbsp;缺勤人数：</p>
+                                        <h3 class="pull-right">4</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--/.fluid-container-->
+</div>
+<!-- 主体内容 end -->
+<!-- 修改密码模态框 start -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+        </button>
+        <h3 id="myModalLabel">
+            <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
+            修改密码
+        </h3>
+    </div>
+    <form class="form-horizontal no-margin" id="passwordForm">
+        <table>
+            <div class="modal-body">
+                <div class="tab-content" id="myTabContent">
+                    <div id="step1" class="tab-pane fade active in">
+
+                        <div class="control-group">
+                            <label class="control-label" for="password">
+                                当前密码
+                            </label>
+                            <div class="controls">
+                                <input type="password" id="password" name="currencyPassword" placeholder="请输入当前密码">
+                                <span style="color: red;" id="span_password"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="newPassword_1">
+                                修改密码
+                            </label>
+                            <div class="controls">
+                                <input type="password" id="newPassword_1" name="newPassword" placeholder="请输入要修改的密码">
+                                <span style="color: red;" id="span_newPassword_1"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="newPassword_2">
+                                确认密码
+                            </label>
+                            <div class="controls">
+                                <input type="password" id="newPassword_2" name="confirmPassword"
+                                       placeholder="请确认要修改的密码">
+                                <span style="color: red;" id="span_newPassword_2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" onclick="changePassword()">
+                    提交
+                </button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">
+                    关闭
+                </button>
+            </div>
+        </table>
+    </form>
+</div>
+<!-- 修改密码模态框 end -->
+<!-- 底部footer start -->
+<footer>
+    <p>
+        &copy; 雷格SS Copyright 2018 Powered by Bootstrap! F1.0 备：沪ICP备41749849号-3
+    </p>
+</footer>
+<!-- 底部footer end -->
+
+
+<script src="static/js/jquery.min.js">
+</script>
+<script src="static/js/bootstrap.js">
+</script>
+<script src="static/js/echarts.js">
+</script>
+<script type="text/javascript" src="static/js/alertify.min.js">
+</script>
+<script src="static/js/jquery.scrollUp.js">
+</script>
+<script src="static/js/jquery.dataTables.js">
+</script>
+//主JS代码
+<script type="text/javascript" src="static/js/main.js">
+</script>
+<script>
+    /*
+     * 页面加载自动执行方法
+     * 注意加载顺序！
+     * */
+
+    //加载*在职*员工信息列表
+    $(document).ready(function () {
+        getEmployee_on();
+    });
+    //Data Tables插件
+    $(document).ready(function () {
+        $('#data-table1').dataTable({
+            "sPaginationType": "full_numbers"
+        });
+    });
+    $(document).ready(function () {
+        $('#data-table2').dataTable({
+            "sPaginationType": "full_numbers"
+        });
+    });
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main1'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['出勤人数','请假人数','缺勤人数','补卡人数']
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:20, name:'出勤人数'},
+                    {value:3, name:'请假人数'},
+                    {value:2, name:'缺勤人数'},
+                    {value:5, name:'补卡人数'}
+                ]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main2'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '本周出勤人数统计'
+        },
+        tooltip: {},
+        legend: {
+            data:['出勤人数']
+        },
+        xAxis: {
+            data: ["星期一","星期二","星期三","星期四","星期五","星期六"]
+        },
+        yAxis: {},
+        series: [{
+            name: '人数',
+            type: 'line',
+            data: [10, 13, 18, 20, 18, 20]
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script>
+    /*
+     * 加载*在职*员工信息列表方法：
+     *
+     * 传入值：
+     *   部门id：department_id
+     *   员工状态（在\离职）：status
+     * 返回值：
+     *   员工ID：id
+     *   员工姓名：name
+     *   员工工号：number
+     *   员工手机号：phone
+     *   员工所在部门：department
+     *   员工职位：position
+     *   员工班次：shift_id
+     *   员工等级：level
+     * */
+    function getEmployee_on() {
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: "static/data/employeeManage.txt",
+            data: 'department_id=1&&status=1',
+            dataType: 'json',
+            async: false,
+            error: function (request) {
+                console.log(request.error);
+            },
+            success: function (data) {
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += "<tr>";
+                    for (attr in data[i]) {
+                        html += "<td>";
+                        html += data[i][attr];
+                        html += "</td>";
+                    }
+                    html += "<td><span class=\"label label label-success\">在职</span></td>";
+                    html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">查看</button></td>";
+                    html += "</tr>";
+                }
+                //将拼接完成的table传入表格元素节点内
+                $('#table_on').append(html);
+            }
+        });
+    }
+</script>
+</body>
+</html>
