@@ -22,19 +22,20 @@
 <!--
 <![endif]-->
 <head>
-  <meta charset="utf-8">
-  <title>
-    考勤系统-员工信息
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- bootstrap css -->
+    <meta charset="utf-8">
+    <title>
+        考勤系统-员工信息
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
 
-  <link href="static/icomoon/style.css" rel="stylesheet">
-  <link href="static/css/main.css" rel="stylesheet"> <!-- Important. For Theming change primary-color variable in main.css  -->
-  <link href="static/css/alertify.core.css" rel="stylesheet" id="toggleCSS">
-  <!--[if lte IE 7]>
+    <link href="static/icomoon/style.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <!-- Important. For Theming change primary-color variable in main.css  -->
+    <link href="static/css/alertify.core.css" rel="stylesheet" id="toggleCSS">
+    <!--[if lte IE 7]>
     <script src="static/css/icomoon-font/lte-ie7.js">
     </script>
     <![endif]-->
@@ -43,370 +44,483 @@
 <body onload="message('success','跳转成功');">
 <!-- 头部状态栏 start -->
 <header>
-  <a href="#" class="logo">
-    <img src="static/img/logo.png" alt="Logo"/>
-  </a>
-  <div class="btn-group">
-    <button class="btn btn-primary">
-      早上好，admin ！
-    </button>
-    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+    <a href="#" class="logo">
+        <img src="static/img/logo.png" alt="Logo"/>
+    </a>
+    <div class="btn-group">
+        <button class="btn btn-primary">
+            早上好，admin ！
+        </button>
+        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
           <span class="caret">
           </span>
-    </button>
-    <ul class="dropdown-menu pull-right">
-      <li>
-        <a href="#myModal" role="button" data-toggle="modal">
-          修改密码
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          注销账户
-        </a>
-      </li>
-    </ul>
-  </div>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li>
+                <a href="#myModal" role="button" data-toggle="modal">
+                    修改密码
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    注销账户
+                </a>
+            </li>
+        </ul>
+    </div>
 </header>
 <!-- 头部状态栏 end -->
 <!-- 主体内容 start -->
 <div class="container-fluid">
-  <div class="dashboard-container">
-    <!--头部主导航栏-->
-    <div class="top-nav">
-      <ul>
-        <li>
-          <a href="punch.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
-            打卡测试
-          </a>
-        </li>
-        <li>
-          <a href="employeeManage.html" class="selected">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe072;"></div>
-            员工信息
-          </a>
-        </li>
-        <li>
-          <a href="department.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
-            部门信息
-          </a>
-        </li>
-        <li>
-          <a href="position.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe073;"></div>
-            职位管理
-          </a>
-        </li>
-        <li>
-          <a href="leaveRecord.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe0e4;"></div>
-            请假管理
-          </a>
-        </li>
-        <li>
-          <a href="shiftManagement.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe075;"></div>
-            班次管理
-          </a>
-        </li>
-        <li>
-          <a href="attence.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe096;"></div>
-            考勤管理
-          </a>
-        </li>
-        <li>
-          <a href="result.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe0b8;"></div>
-            考勤结果管理
-          </a>
-        </li>
-        <li>
-          <a href="permission.html">
-            <div class="fs1" aria-hidden="true" data-icon="&#xe0fe;"></div>
-            权限管理
-          </a>
-        </li>
-      </ul>
-      <div class="clearfix">
-      </div>
-    </div>
-    <!--头部副导航栏-->
-    <div class="sub-nav">
-      <ul>
-        <li><a href="#" class="heading">员工信息</a></li>
-      </ul>
-    </div>
-    <div class="dashboard-wrapper">
-      <div class="left-sidebar">
+    <div class="dashboard-container">
+        <!--头部主导航栏-->
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="punch.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+                        打卡测试
+                    </a>
+                </li>
+                <li>
+                    <a href="employeeManage.html" class="selected">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe072;"></div>
+                        员工信息
+                    </a>
+                </li>
+                <li>
+                    <a href="department.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
+                        部门信息
+                    </a>
+                </li>
+                <li>
+                    <a href="position.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe073;"></div>
+                        职位管理
+                    </a>
+                </li>
+                <li>
+                    <a href="leaveRecord.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0e4;"></div>
+                        请假管理
+                    </a>
+                </li>
+                <li>
+                    <a href="shiftManagement.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe075;"></div>
+                        班次管理
+                    </a>
+                </li>
+                <li>
+                    <a href="attence.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe096;"></div>
+                        考勤管理
+                    </a>
+                </li>
+                <li>
+                    <a href="result.html">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe0b8;"></div>
+                        考勤结果管理
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix">
+            </div>
+        </div>
+        <!--头部副导航栏-->
+        <div class="sub-nav">
+            <ul>
+                <li><a href="#" class="heading">员工信息</a></li>
+            </ul>
+        </div>
+        <div class="dashboard-wrapper">
+            <div class="left-sidebar">
 
-        <div class="row-fluid">
+                <div class="row-fluid">
 
-          <div class="span12">
-            <!-- 员工信息 -->
-            <div class="widget">
-              <div class="widget-header">
-                <div class="title" id="list">
-                  员工列表
-                </div>
-                <span class="tools">
+                    <div class="span12">
+                        <!-- 员工信息 -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <div class="title" id="list">
+                                    员工列表
+                                </div>
+                                <span class="tools">
                       <a class="fs1" aria-hidden="true" data-icon="" data-original-title=""></a>
                     </span>
-              </div>
-              <div class="widget-body">
-                <div id="dt_example" class="example_alt_pagination">
-                  <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
-                    <ul id="myTab" class="nav nav-tabs">
-                      <li class="active">
-                        <a href="#home" data-toggle="tab">
-                          在职员工
-                        </a>
-                      </li>
-                      <li><a href="#ios" data-toggle="tab">离职员工</a></li>
-                    </ul>
-                    <!-- 添加员工按钮 -->
-                    <button class="btn btn-primary" onclick="location.href='employeeDetails.html'">添加员工</button>
-                    <div id="myTabContent1" class="tab-content">
-                      <div class="tab-pane fade in active" id="home">
-                        <!-- 在职员工 -->
-                        <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table1" aria-describedby="data-table_info">
+                            </div>
+                            <div class="widget-body">
+                                <div id="dt_example" class="example_alt_pagination">
+                                    <div id="data-table_wrapper" class="dataTables_wrapper" role="grid">
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#home" data-toggle="tab">
+                                                    在职员工
+                                                </a>
+                                            </li>
+                                            <li><a href="#ios" data-toggle="tab">离职员工</a></li>
+                                        </ul>
+                                        <!-- 添加员工按钮 -->
+                                        <button class="btn btn-primary" onclick="location.href='employeeDetails.html'">
+                                            添加员工
+                                        </button>
+                                        <div id="myTabContent1" class="tab-content">
+                                            <div class="tab-pane fade in active" id="home">
+                                                <!-- 在职员工 -->
+                                                <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
+                                                       id="data-table1" aria-describedby="data-table_info">
 
-                          <thead>
-                          <tr role="row">
-                            <th>
-                              编号
-                            </th>
-                            <th>
-                              员工姓名
-                            </th>
-                            <th>
-                              员工工号
-                            </th>
-                            <th>
-                              手机号
-                            </th>
-                            <th>
-                              所属部门
-                            </th>
-                            <th>
-                              职位
-                            </th>
-                            <th>
-                              班次
-                            </th>
-                            <th>
-                              等级
-                            </th>
-                            <th>
-                              员工状态
-                            </th>
-                            <th>
-                              操作
-                            </th>
-                          </tr>
-                          </thead>
+                                                    <thead>
+                                                    <tr role="row">
+                                                        <th>
+                                                            编号
+                                                        </th>
+                                                        <th>
+                                                            员工姓名
+                                                        </th>
+                                                        <th>
+                                                            员工工号
+                                                        </th>
+                                                        <th>
+                                                            手机号
+                                                        </th>
+                                                        <th>
+                                                            所属部门
+                                                        </th>
+                                                        <th>
+                                                            职位
+                                                        </th>
+                                                        <th>
+                                                            班次
+                                                        </th>
+                                                        <th>
+                                                            等级
+                                                        </th>
+                                                        <th>
+                                                            员工状态
+                                                        </th>
+                                                        <th>
+                                                            操作
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
 
-                          <tbody id="table_on" role="alert" aria-live="polite" aria-relevant="all">
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="tab-pane fade" id="ios">
-                        <!-- 离职员工 -->
-                        <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable" id="data-table2" aria-describedby="data-table_info">
+                                                    <tbody id="table_on" role="alert" aria-live="polite"
+                                                           aria-relevant="all">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="ios">
+                                                <!-- 离职员工 -->
+                                                <table class="table table-condensed table-striped table-hover table-bordered pull-left dataTable"
+                                                       id="data-table2" aria-describedby="data-table_info">
 
-                          <thead>
-                          <tr role="row">
-                            <th>
-                              编号
-                            </th>
-                            <th>
-                              员工姓名
-                            </th>
-                            <th>
-                              员工工号
-                            </th>
-                            <th>
-                              手机号
-                            </th>
-                            <th>
-                              所属部门
-                            </th>
-                            <th>
-                              职位
-                            </th>
-                            <th>
-                              班次
-                            </th>
-                            <th>
-                              等级
-                            </th>
-                            <th>
-                              员工状态
-                            </th>
-                            <th>
-                              操作
-                            </th>
-                          </tr>
-                          </thead>
+                                                    <thead>
+                                                    <tr role="row">
+                                                        <th>
+                                                            编号
+                                                        </th>
+                                                        <th>
+                                                            员工姓名
+                                                        </th>
+                                                        <th>
+                                                            员工工号
+                                                        </th>
+                                                        <th>
+                                                            手机号
+                                                        </th>
+                                                        <th>
+                                                            所属部门
+                                                        </th>
+                                                        <th>
+                                                            职位
+                                                        </th>
+                                                        <th>
+                                                            班次
+                                                        </th>
+                                                        <th>
+                                                            等级
+                                                        </th>
+                                                        <th>
+                                                            员工状态
+                                                        </th>
+                                                        <th>
+                                                            操作
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
 
-                          <tbody id="table_off" role="alert" aria-live="polite" aria-relevant="all">
-                          </tbody>
-                        </table>
-                      </div>
+                                                    <tbody id="table_off" role="alert" aria-live="polite"
+                                                           aria-relevant="all">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                  </div>
-                  <div class="clearfix"></div>
                 </div>
-              </div>
+
+
             </div>
-          </div>
+
+            <!-- 右边员工预览 -->
+            <div class="right-sidebar">
+                <div class="wrapper">
+                    <ul class="stats">
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe000;"></div>
+                                        <p class="pull-left">&nbsp;部门员工数：</p>
+                                        <h3 class="pull-right">15,859</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe01b;"></div>
+                                        <p class="pull-left">&nbsp;今日应到人数：</p>
+                                        <h3 class="pull-right">15,857</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe070;"></div>
+                                        <p class="pull-left">&nbsp;今日实到人数：</p>
+                                        <h3 class="pull-right">15,853</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe006;"></div>
+                                        <p class="pull-left">&nbsp;请假人数：</p>
+                                        <h3 class="pull-right">2</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metro-nav-block nav-block-yellow current">
+                                <a href="#">
+                                    <div class="brand">
+                                        <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe04b;"></div>
+                                        <p class="pull-left">&nbsp;缺勤人数：</p>
+                                        <h3 class="pull-right">4</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
 
         </div>
-
-
-      </div>
-
-      <!-- 右边员工预览 -->
-      <div class="right-sidebar">
-        <div class="wrapper">
-          <ul class="stats">
-            <li>
-              <div class="metro-nav-block nav-block-yellow current">
-                <a href="#">
-                  <div class="brand">
-                    <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe000;"></div>
-                    <p class="pull-left">&nbsp;部门员工数：</p>
-                    <h3 class="pull-right">15,859</h3>
-                    <div class="clearfix"></div>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="metro-nav-block nav-block-yellow current">
-                <a href="#">
-                  <div class="brand">
-                    <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe01b;"></div>
-                    <p class="pull-left">&nbsp;今日应到人数：</p>
-                    <h3 class="pull-right">15,857</h3>
-                    <div class="clearfix"></div>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="metro-nav-block nav-block-yellow current">
-                <a href="#">
-                  <div class="brand">
-                    <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe070;"></div>
-                    <p class="pull-left">&nbsp;今日实到人数：</p>
-                    <h3 class="pull-right">15,853</h3>
-                    <div class="clearfix"></div>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="metro-nav-block nav-block-yellow current">
-                <a href="#">
-                  <div class="brand">
-                    <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe006;"></div>
-                    <p class="pull-left">&nbsp;请假人数：</p>
-                    <h3 class="pull-right">2</h3>
-                    <div class="clearfix"></div>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="metro-nav-block nav-block-yellow current">
-                <a href="#">
-                  <div class="brand">
-                    <div class="pull-left fs1" aria-hidden="true" data-icon="&#xe04b;"></div>
-                    <p class="pull-left">&nbsp;缺勤人数：</p>
-                    <h3 class="pull-right">4</h3>
-                    <div class="clearfix"></div>
-                  </div>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
     </div>
-  </div>
-  <!--/.fluid-container-->
+    <!--/.fluid-container-->
 </div>
 <!-- 主体内容 end -->
+<!-- 修改部门信息模态框 start -->
+<div id="edit" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+        </button>
+        <h3>
+            <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
+            修改部门信息
+        </h3>
+    </div>
+    <form class="form-horizontal no-margin" id="employeeForm">
+        <table>
+            <div class="modal-body">
+                <div class="tab-content" id="">
+                    <div class="tab-pane fade active in">
+
+                        <div class="control-group">
+                            <label class="control-label" for="id">
+                                员工编号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="id" placeholder="请输入员工编号" name="id">
+                                <span style="color: red;" id="id_name"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="name">
+                                员工姓名
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="name" placeholder="请输入员工姓名" name="name">
+                                <span style="color: red;" id="span_name"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="number">
+                                员工工号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="number" placeholder="请输入员工工号" name="number">
+                                <span style="color: red;" id="number_address"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="phone">
+                                员工手机号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="phone" placeholder="请输入员工手机号" name="phone">
+                                <span style="color: red;" id="phone_address"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="department">
+                                所属部门
+                            </label>
+                            <div class="controls">
+                                <select name="department" id="department">
+                                    <option value="">-- 请选择所属部门 --</option>
+                                    <option value="人事部">人事部</option>
+                                    <option value="行政部">行政部</option>
+                                    <option value="保洁部">保洁部</option>
+                                </select>
+                                <span style="color: red;" id="department_address"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="position">
+                                所属职位
+                            </label>
+                            <div class="controls">
+                                <select name="position" id="position">
+                                    <option value="">-- 请选择所属职位 --</option>
+                                    <option value="总经理">总经理</option>
+                                    <option value="行政">行政</option>
+                                    <option value="员工">员工</option>
+                                </select>
+                                <span style="color: red;" id="position_type"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="shift_id">
+                                班次
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="shift_id" placeholder="请输入员工班次" name="shift_id">
+                                <span style="color: red;" id="shift_id_address"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="level">
+                                等级
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="level" placeholder="请输入员工等级" name="level">
+                                <span style="color: red;" id="level_address"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" onclick="edit()">
+                        提交
+                    </button>
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">
+                        关闭
+                    </button>
+                </div>
+        </table>
+    </form>
+</div>
 <!-- 修改密码模态框 start -->
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-      ×
-    </button>
-    <h3 id="myModalLabel">
-      <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
-      修改密码
-    </h3>
-  </div>
-  <form class="form-horizontal no-margin" id="passwordForm">
-    <table>
-      <div class="modal-body">
-        <div class="tab-content" id="myTabContent">
-          <div id="step1" class="tab-pane fade active in">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+        </button>
+        <h3 id="myModalLabel">
+            <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
+            修改密码
+        </h3>
+    </div>
+    <form class="form-horizontal no-margin" id="passwordForm">
+        <table>
+            <div class="modal-body">
+                <div class="tab-content" id="myTabContent">
+                    <div id="step1" class="tab-pane fade active in">
 
-            <div class="control-group">
-              <label class="control-label" for="password">
-                当前密码
-              </label>
-              <div class="controls">
-                <input type="password" id="password" name="currencyPassword" placeholder="请输入当前密码">
-                <span style="color: red;" id="span_password"></span>
-              </div>
+                        <div class="control-group">
+                            <label class="control-label" for="password">
+                                当前密码
+                            </label>
+                            <div class="controls">
+                                <input type="password" id="password" name="currencyPassword" placeholder="请输入当前密码">
+                                <span style="color: red;" id="span_password"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="newPassword_1">
+                                修改密码
+                            </label>
+                            <div class="controls">
+                                <input type="password" id="newPassword_1" name="newPassword" placeholder="请输入要修改的密码">
+                                <span style="color: red;" id="span_newPassword_1"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="newPassword_2">
+                                确认密码
+                            </label>
+                            <div class="controls">
+                                <input type="password" id="newPassword_2" name="confirmPassword"
+                                       placeholder="请确认要修改的密码">
+                                <span style="color: red;" id="span_newPassword_2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="control-group">
-              <label class="control-label" for="newPassword_1">
-                修改密码
-              </label>
-              <div class="controls">
-                <input type="password" id="newPassword_1" name="newPassword" placeholder="请输入要修改的密码">
-                <span style="color: red;" id="span_newPassword_1"></span>
-              </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" onclick="changePassword()">
+                    提交
+                </button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">
+                    关闭
+                </button>
             </div>
-            <div class="control-group">
-              <label class="control-label" for="newPassword_2">
-                确认密码
-              </label>
-              <div class="controls">
-                <input type="password" id="newPassword_2" name="confirmPassword" placeholder="请确认要修改的密码">
-                <span style="color: red;" id="span_newPassword_2"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" type="button" onclick="changePassword()">
-          提交
-        </button>
-        <button class="btn" data-dismiss="modal" aria-hidden="true">
-          关闭
-        </button>
-      </div>
-    </table>
-  </form>
+        </table>
+    </form>
 </div>
 <!-- 修改密码模态框 end -->
 <!-- 底部footer start -->
 <footer>
-  <p>
-    &copy; 雷格SS Copyright 2018 Powered by Bootstrap! F1.0  备：沪ICP备41749849号-3
-  </p>
+    <p>
+        &copy; 雷格SS Copyright 2018 Powered by Bootstrap! F1.0 备：沪ICP备41749849号-3
+    </p>
 </footer>
 <!-- 底部footer end -->
 
@@ -425,124 +539,181 @@
 <script type="text/javascript" src="static/js/main.js">
 </script>
 <script>
-  /*
-  * 页面加载自动执行方法
-  * 注意加载顺序！
-  * */
+    /*
+     * 页面加载自动执行方法
+     * 注意加载顺序！
+     * */
 
-  //加载*在职*员工信息列表
-  $(document).ready(function () {
-    getEmployee_on();
-  });
-  //加载*离职*员工信息列表
-  $(document).ready(function () {
-    getEmployee_off();
-  });
+    //加载*在职*员工信息列表
+    $(document).ready(function () {
+        getEmployee_on();
+    });
+    //加载*离职*员工信息列表
+    $(document).ready(function () {
+        getEmployee_off();
+    });
 
-  //Data Tables插件
-  $(document).ready(function () {
-    $('#data-table1').dataTable({
-      "sPaginationType": "full_numbers"
+    //Data Tables插件
+    $(document).ready(function () {
+        $('#data-table1').dataTable({
+            "sPaginationType": "full_numbers"
+        });
     });
-  })  ;
-  $(document).ready(function () {
-    $('#data-table2').dataTable({
-      "sPaginationType": "full_numbers"
+    $(document).ready(function () {
+        $('#data-table2').dataTable({
+            "sPaginationType": "full_numbers"
+        });
     });
-  });
 </script>
 <script>
-  /*
-  * 加载*在职*员工信息列表方法：
-  *
-  * 传入值：
-  *   部门id：department_id
-  *   员工状态（在\离职）：status
-  * 返回值：
-  *   员工ID：id
-  *   员工姓名：name
-  *   员工工号：number
-  *   员工手机号：phone
-  *   员工所在部门：department
-  *   员工职位：position
-  *   员工班次：shift_id
-  *   员工等级：level
-  * */
-  function getEmployee_on() {
-    $.ajax({
-      cache: false,
-      type: "GET",
-      url:"static/data/employeeManage.txt",
-      data: 'department_id=1&&status=1',
-      dataType : 'json',
-      async : false,
-      error: function(request) {
-        console.log(request.error);
-      },
-      success: function(data) {
-        var html = "";
-        for(var i = 0;i < data.length;i++){
-          html += "<tr>";
-          for(attr in data[i]){
-            html += "<td>";
-            html += data[i][attr];
-            html += "</td>";
-          }
-          html += "<td><span class=\"label label label-success\">在职</span></td>";
-          html += "<td><button class=\"btn btn-primary\">查看</button></td>";
-          html += "</tr>";
-        }
-        //将拼接完成的table传入表格元素节点内
-        $('#table_on').append(html);
-      }
-    });
-  }
+    /*
+     * 加载*在职*员工信息列表方法：
+     *
+     * 传入值：
+     *   部门id：department_id
+     *   员工状态（在\离职）：status
+     * 返回值：
+     *   员工ID：id
+     *   员工姓名：name
+     *   员工工号：number
+     *   员工手机号：phone
+     *   员工所在部门：department
+     *   员工职位：position
+     *   员工班次：shift_id
+     *   员工等级：level
+     * */
+    function getEmployee_on() {
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: "static/data/employeeManage.txt",
+            data: 'department_id=1&&status=1',
+            dataType: 'json',
+            async: false,
+            error: function (request) {
+                console.log(request.error);
+            },
+            success: function (data) {
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += "<tr>";
+                    for (attr in data[i]) {
+                        html += "<td>";
+                        html += data[i][attr];
+                        html += "</td>";
+                    }
+                    html += "<td><span class=\"label label label-success\">在职</span></td>";
+                    html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">查看</button></td>";
+                    html += "</tr>";
+                }
+                //将拼接完成的table传入表格元素节点内
+                $('#table_on').append(html);
+            }
+        });
+    }
 
-  /*
-  * 加载*离职*员工信息列表方法：
-  *
-  * 传入值：
-  *   部门id：department_id
-  *   员工状态（在\离职）：status
-  * 返回值：
-  *   员工ID：id
-  *   员工姓名：name
-  *   员工工号：number
-  *   员工手机号：phone
-  *   员工所在部门：department
-  *   员工职位：position
-  *   员工班次：shift_id
-  *   员工等级：level
-  * */
-  function getEmployee_off() {
-    $.ajax({
-      cache: true,
-      type: "GET",
-      url:"static/data/employeeManage.txt",
-      data: 'department_id=1&&status=1',
-      dataType : 'json',
-      async : false,
-      error: function(request) {
-        console.log(request.error);
-      },
-      success: function(data) {
-        var html = "";
-        for(var i = 0;i < data.length;i++){
-          html += "<tr>";
-          for(attr in data[i]){
-            html += "<td>";
-            html += data[i][attr];
-            html += "</td>";
-          }
-          html += "<td><span class=\"label label label-important\">离职</span></td>";
-          html += "<td><button class=\"btn btn-primary\">查看</button></td>";
-          html += "</tr>";
-        }
-        //将拼接完成的table传入表格元素节点内
-        $('#table_off').append(html);
-      }
-    });
-  }
+    /*
+     * 加载*离职*员工信息列表方法：
+     *
+     * 传入值：
+     *   部门id：department_id
+     *   员工状态（在\离职）：status
+     * 返回值：
+     *   员工ID：id
+     *   员工姓名：name
+     *   员工工号：number
+     *   员工手机号：phone
+     *   员工所在部门：department
+     *   员工职位：position
+     *   员工班次：shift_id
+     *   员工等级：level
+     * */
+    function getEmployee_off() {
+        $.ajax({
+            cache: true,
+            type: "GET",
+            url: "static/data/employeeManage.txt",
+            data: 'department_id=1&&status=1',
+            dataType: 'json',
+            async: false,
+            error: function (request) {
+                console.log(request.error);
+            },
+            success: function (data) {
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += "<tr>";
+                    for (attr in data[i]) {
+                        html += "<td>";
+                        html += data[i][attr];
+                        html += "</td>";
+                    }
+                    html += "<td><span class=\"label label label-important\">离职</span></td>";
+                    html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">查看</button></td>";
+                    html += "</tr>";
+                }
+                //将拼接完成的table传入表格元素节点内
+                $('#table_off').append(html);
+            }
+        });
+    }
+
+    function lick(obj, id) {
+        var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
+
+        var id = td_content.eq(0).text(); //获取当前行第二个td的值
+        var name = td_content.eq(1).text(); //获取当前行第二个td的值
+        var number = td_content.eq(2).text(); //获取当前行第二个td的值
+        var phone = td_content.eq(3).text(); //获取当前行第二个td的值
+        var department = td_content.eq(4).text(); //获取当前行第二个td的值
+        var position = td_content.eq(5).text(); //获取当前行第二个td的值
+        var shift_id = td_content.eq(6).text(); //获取当前行第二个td的值
+        var level = td_content.eq(7).text(); //获取当前行第二个td的值
+
+        document.getElementById('id').value = id;
+        document.getElementById('name').value = name;
+        document.getElementById('number').value = number;
+        document.getElementById('phone').value = phone;
+        document.getElementById('department').value = department;
+        document.getElementById('position').value = position;
+        document.getElementById('shift_id').value = shift_id;
+        document.getElementById('level').value = level;
+    }
+    //编辑部门信息表单验证
+    function edit() {
+        //获取表单数据
+        var employeeFormJson = $('#employeeForm').serializeArray();
+        //构造请求参数
+        var employeeSubmitJson = {
+            id: parseInt(employeeFormJson[0].value),
+            name: employeeFormJson[1].value,
+            number: parseInt(employeeFormJson[2].value),
+            phone: employeeFormJson[3].value,
+            department: employeeFormJson[4].value,
+            position: employeeFormJson[5].value,
+            shift_id: parseInt(employeeFormJson[6].value),
+            level: parseInt(employeeFormJson[7].value)
+        };
+        $.ajax({
+            catch: false,
+            type: "POST",
+            url: "/attend/insert",
+            data: employeeSubmitJson,
+            async: false,
+            success: function (data) {
+                if (data == "SUCCESS") {
+                    //打卡成功
+                    message('success', '成功');
+                } else if (data == "fail") {
+                    //打卡失败
+                    message('error', '失败');
+                } else {
+                    //其他错误信息
+                    message('error', 'data');
+                }
+            }
+        })
+    }
 </script>
 </body>
 </html>
