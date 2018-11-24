@@ -513,17 +513,16 @@
                     success: function (data) {
                         if (data == "SUCCESS") {
                             //删除成功
-                            message('success', '成功');
+                            message('success', '删除成功');
                         } else if (data == "fail") {
                             //删除失败
-                            message('error', '失败');
+                            message('error', '删除成功');
                         } else {
                             //其他错误信息
                             message('error', 'data');
                         }
                     }
                 })
-                alertify.success("删除成功");
             }
         });
         return false;

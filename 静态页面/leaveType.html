@@ -189,7 +189,8 @@
                                             </tr>
                                             </thead>
 
-                                            <tbody id="table_record" role="alert" aria-live="polite" aria-relevant="all">
+                                            <tbody id="table_record" role="alert" aria-live="polite"
+                                                   aria-relevant="all">
                                             </tbody>
                                         </table>
                                     </div>
@@ -286,7 +287,7 @@
             请假记录审核
         </h3>
     </div>
-    <form class="form-horizontal no-margin" onsubmit="return edit()">
+    <form class="form-horizontal no-margin" id="leaveForm">
         <table>
             <div class="modal-body">
                 <div class="tab-content" id="">
@@ -294,10 +295,19 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
+                                类别编号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="id" placeholder="请输入类别编号" name="id">
+                                <span style="color: red;" id="id_name"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="name">
                                 类别名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入类别名称">
+                                <input type="text" id="name" placeholder="请输入类别名称" name="name">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
@@ -306,7 +316,12 @@
                                 处理方式
                             </label>
                             <div class="controls">
-                                <input type="text" id="type" placeholder="请输入处理方式">
+                                <select name="type" id="type">
+                                    <option value="">-- 请选择处理方式 --</option>
+                                    <option value="不处理">不处理</option>
+                                    <option value="补考勤">补考勤</option>
+                                    <option value="请假处理">请假处理</option>
+                                </select>
                                 <span style="color: red;" id="span_type"></span>
                             </div>
                         </div>
@@ -314,7 +329,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" type="button" onclick="edit()">
                     提交
                 </button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">
@@ -364,7 +379,8 @@
                                 确认密码
                             </label>
                             <div class="controls">
-                                <input type="password" id="newPassword_2" name="confirmPassword" placeholder="请确认要修改的密码">
+                                <input type="password" id="newPassword_2" name="confirmPassword"
+                                       placeholder="请确认要修改的密码">
                                 <span style="color: red;" id="span_newPassword_2"></span>
                             </div>
                         </div>
@@ -426,26 +442,26 @@
 <script>
     function getLeave_record() {
         $.ajax({
-            catch : false,
-            type : "GET",
-            url : "data/leaveType.txt",
-            data : "department_id=1",
-            dataType : "json",
-            async : false,
-            error : function (request) {
+            catch: false,
+            type: "GET",
+            url: "static/data/leaveType.txt",
+            data: "department_id=1",
+            dataType: "json",
+            async: false,
+            error: function (request) {
                 console.log(request.error);
             },
-            success : function (data) {
+            success: function (data) {
                 var html = "";
-                for(var i = 0;i < data.length;i++){
+                for (var i = 0; i < data.length; i++) {
                     html += "<tr>";
-                    for(attr in data[i]){
+                    for (attr in data[i]) {
                         html += "<td>";
                         html += data[i][attr];
                         html += "</td>";
                     }
                     html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">编辑 </button>";
-                    html += "<button class=\"btn btn-danger\" onclick=\"del()\">删除</button> </td>";
+                    html += "<button class=\"btn btn-danger\" onclick=\"del(this)\">删除</button> </td>";
                     html += "</tr>";
                 }
                 //将拼接完成的table传入表格元素节点内
@@ -469,13 +485,36 @@
         });
     };
     //删除按钮点击事件
-    function del() {
+    function del(obj) {
         reset();
         alertify.confirm("确认删除该条记录吗？", function (e) {
             if (e) {
                 //用户点击了取消按钮，不执行操作
             } else {
-                alertify.success("删除成功");
+                var id = parseInt($(obj).parents("td").parents("tr").children("td").eq(0).text());
+                console.log('删除id = ', id);
+                var deleteSubmitJson = {
+                    id: id
+                }
+                $.ajax({
+                    catch: false,
+                    type: "POST",
+                    url: "/attend/insert",
+                    data: deleteSubmitJson,
+                    async: false,
+                    success: function (data) {
+                        if (data == "SUCCESS") {
+                            //删除成功
+                            message('success', '成功');
+                        } else if (data == "fail") {
+                            //删除失败
+                            message('error', '失败');
+                        } else {
+                            //其他错误信息
+                            message('error', 'data');
+                        }
+                    }
+                })
             }
         });
         return false;
@@ -484,9 +523,11 @@
     function lick(obj, id) {
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
+        var id = td_content.eq(0).text(); //获取当前行第二个td的值
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
         var type = td_content.eq(2).text(); //获取当前行第二个td的值
 
+        document.getElementById('id').value = id;
         document.getElementById('name').value = name;
         document.getElementById('type').value = type;
     }
@@ -516,16 +557,42 @@
             document.getElementById("span_type").innerHTML = '请输入处理方式';
             return false;
         }
-        return true;
+        //获取表单数据
+        var leaveFormJson = $('#leaveForm').serializeArray();
+        //构造请求参数
+        var leaveSubmitJson = {
+            id: parseInt(leaveFormJson[0].value),
+            name: leaveFormJson[1].value,
+            type: leaveFormJson[2].value,
+        };
+        $.ajax({
+            catch: false,
+            type: "POST",
+            url: "/attend/insert",
+            data: leaveSubmitJson,
+            async: false,
+            success: function (data) {
+                if (data == "SUCCESS") {
+                    //打卡成功
+                    message('success', '成功');
+                } else if (data == "fail") {
+                    //打卡失败
+                    message('error', '失败');
+                } else {
+                    //其他错误信息
+                    message('error', 'data');
+                }
+            }
+        })
     }
-    
+
     function dateFormat(time) {
         /*
-        * 时间格式化
-        * 转换前格式：2017-10-10 08:08
-        * 转换后：2017-10-10T08:08
-        * */
-        time = time.replace(' ','T');
+         * 时间格式化
+         * 转换前格式：2017-10-10 08:08
+         * 转换后：2017-10-10T08:08
+         * */
+        time = time.replace(' ', 'T');
         console.log(time);
         return time;
     }
