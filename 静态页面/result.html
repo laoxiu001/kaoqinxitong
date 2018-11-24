@@ -277,7 +277,7 @@
             修改考勤结果
         </h3>
     </div>
-    <form class="form-horizontal no-margin" onsubmit="return edit()">
+    <form class="form-horizontal no-margin" id="resultForm">
         <table>
             <div class="modal-body">
                 <div class="tab-content" id="">
@@ -285,10 +285,19 @@
 
                         <div class="control-group">
                             <label class="control-label" for="name">
+                                考勤结果编号
+                            </label>
+                            <div class="controls">
+                                <input type="text" id="id" placeholder="请输入考勤结果编号" name="id">
+                                <span style="color: red;" id="id_name"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="name">
                                 考勤结果名称
                             </label>
                             <div class="controls">
-                                <input type="text" id="name" placeholder="请输入考勤结果名称">
+                                <input type="text" id="name" placeholder="请输入考勤结果名称" name="name">
                                 <span style="color: red;" id="span_name"></span>
                             </div>
                         </div>
@@ -297,7 +306,7 @@
                                 迟到分钟数
                             </label>
                             <div class="controls">
-                                <input type="text" id="minutes" placeholder="请输入迟到分钟数">
+                                <input type="text" id="minutes" placeholder="请输入迟到分钟数" name="minutes">
                                 <span style="color: red;" id="span_minutes"></span>
                             </div>
                         </div>
@@ -305,7 +314,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" type="button" onclick="edit()">
                     提交
                 </button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">
@@ -419,7 +428,7 @@
         $.ajax({
             catch : false,
             type : "GET",
-            url : "data/result.txt",
+            url : "static/data/result.txt",
             data : "department_id=1",
             dataType : "json",
             async : false,
@@ -436,7 +445,7 @@
                         html += "</td>";
                     }
                     html += "<td><button class=\"btn btn-primary\" href=\"#edit\" data-toggle=\"modal\" onclick=\"lick(this, this.id)\">编辑 </button>";
-                    html += "<button class=\"btn btn-danger\" onclick=\"del()\">删除</button> </td>";
+                    html += "<button class=\"btn btn-danger\" onclick=\"del(thi)\">删除</button> </td>";
                     html += "</tr>";
                 }
                 //将拼接完成的table传入表格元素节点内
@@ -460,13 +469,36 @@
         });
     };
     //删除按钮点击事件
-    function del() {
+    function del(obj) {
         reset();
         alertify.confirm("确认删除该条记录吗？", function (e) {
             if (e) {
                 //用户点击了取消按钮，不执行操作
             } else {
-                alertify.success("删除成功");
+                var id = parseInt($(obj).parents("td").parents("tr").children("td").eq(0).text());
+                console.log('删除id = ', id);
+                var deleteSubmitJson = {
+                    id: id
+                }
+                $.ajax({
+                    catch: false,
+                    type: "POST",
+                    url: "/attend/insert",
+                    data: deleteSubmitJson,
+                    async: false,
+                    success: function (data) {
+                        if (data == "SUCCESS") {
+                            //删除成功
+                            message('success', '成功');
+                        } else if (data == "fail") {
+                            //删除失败
+                            message('error', '失败');
+                        } else {
+                            //其他错误信息
+                            message('error', 'data');
+                        }
+                    }
+                })
             }
         });
         return false;
@@ -475,9 +507,11 @@
     function lick(obj, id) {
         var td_content = $(obj).parents("tr").children("td");  //获取当前行中的所有td值
 
+        var id = td_content.eq(0).text(); //获取当前行第二个td的值
         var name = td_content.eq(1).text(); //获取当前行第二个td的值
         var minutes = dateFormat(td_content.eq(2).text()); //获取当前行第二个td的值
 
+        document.getElementById('id').value = id;
         document.getElementById('name').value = name;
         document.getElementById('minutes').value = minutes;
     }
@@ -506,7 +540,33 @@
             document.getElementById("span_minutes").innerHTML = '请输入迟到分钟数';
             return false;
         }
-        return true;
+        //获取表单数据
+        var resultFormJson = $('#resultForm').serializeArray();
+        //构造请求参数
+        var resultSubmitJson = {
+            id: parseInt(resultFormJson[0].value),
+            name: resultFormJson[1].value,
+            minutes: parseInt(resultFormJson[2].value)
+        };
+        $.ajax({
+            catch: false,
+            type: "POST",
+            url: "/attend/insert",
+            data: resultSubmitJson,
+            async: false,
+            success: function (data) {
+                if (data == "SUCCESS") {
+                    //打卡成功
+                    message('success', '成功');
+                } else if (data == "fail") {
+                    //打卡失败
+                    message('error', '失败');
+                } else {
+                    //其他错误信息
+                    message('error', 'data');
+                }
+            }
+        })
     }
 </script>
 </body>
