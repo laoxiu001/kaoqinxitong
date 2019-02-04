@@ -21,19 +21,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="result.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/result.html">
+      <file leaf-file-name="applyLeave.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/applyLeave.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="549" column="28" selection-start-line="549" selection-start-column="28" selection-end-line="549" selection-end-column="28" />
+            <state relative-caret-position="358">
+              <caret line="406" column="38" selection-start-line="406" selection-start-column="38" selection-end-line="406" selection-end-column="38" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1549250562985" expanded="true" signature="892:906" ph="..." />
+                <marker date="1549253248662" expanded="true" signature="888:902" ph="..." />
               </folding>
             </state>
           </provider>
@@ -45,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,7 +57,9 @@
         <option value="$PROJECT_DIR$/punch.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/employeeManage.html" />
+        <option value="$PROJECT_DIR$/applyLeace.html" />
         <option value="$PROJECT_DIR$/result.html" />
+        <option value="$PROJECT_DIR$/applyLeave.html" />
       </list>
     </option>
   </component>
@@ -138,6 +135,7 @@
     <property name="project.structure.side.proportion" value="0.37959558" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -605,12 +603,12 @@
       <workItem from="1534121223297" duration="571000" />
       <workItem from="1535675612740" duration="288000" />
       <workItem from="1549160700921" duration="4353000" />
-      <workItem from="1549246873744" duration="3864000" />
+      <workItem from="1549246873744" duration="6446000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63310000" />
+    <option name="totallyTimeSpent" value="65892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
@@ -669,7 +667,7 @@
             <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1549250562985" expanded="true" signature="892:906" ph="..." />
+            <marker date="1549252596499" expanded="true" signature="892:906" ph="..." />
           </folding>
         </state>
       </provider>
@@ -834,13 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/punch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="414" column="68" selection-start-line="414" selection-start-column="68" selection-end-line="414" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -862,10 +853,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shiftApply.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding>
+            <marker date="1543019977027" expanded="true" signature="892:906" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/punch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="396" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="532" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/result.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="549" column="28" selection-start-line="549" selection-start-column="28" selection-end-line="549" selection-end-column="28" />
+        <state relative-caret-position="414">
+          <caret line="208" column="61" selection-start-line="208" selection-start-column="48" selection-end-line="208" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -873,7 +882,17 @@
             <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1549250562985" expanded="true" signature="892:906" ph="..." />
+            <marker date="1549252596499" expanded="true" signature="892:906" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applyLeave.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="406" column="38" selection-start-line="406" selection-start-column="38" selection-end-line="406" selection-end-column="38" />
+          <folding>
+            <marker date="1549253248662" expanded="true" signature="888:902" ph="..." />
           </folding>
         </state>
       </provider>
