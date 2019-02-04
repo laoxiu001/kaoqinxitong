@@ -162,7 +162,8 @@
                                             <li><a href="#ios" data-toggle="tab">离职员工</a></li>
                                         </ul>
                                         <!-- 添加员工按钮 -->
-                                        <button class="btn btn-primary" onclick="location.href='employeeDetails.html'">
+                                        <button class="btn btn-primary" href="#edit" data-toggle="modal"
+                                                onclick="lick(this, this.id)">
                                             添加员工
                                         </button>
                                         <div id="myTabContent1" class="tab-content">
@@ -352,7 +353,7 @@
         </button>
         <h3>
             <a class="fs1" aria-hidden="true" data-icon="&#xe1c8;"></a>
-            修改部门信息
+            修改员工信息
         </h3>
     </div>
     <form class="form-horizontal no-margin" id="employeeForm">
@@ -679,6 +680,7 @@
         document.getElementById('shift_id').value = shift_id;
         document.getElementById('level').value = level;
     }
+
     //编辑部门信息表单验证
     function edit() {
         //获取表单数据

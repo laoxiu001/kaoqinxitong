@@ -291,7 +291,7 @@
                                 部门编号
                             </label>
                             <div class="controls">
-                                <input type="text" id="id" placeholder="请输入部门编号" name="id">
+                                <input type="text" id="id" readonly placeholder="请输入部门编号" name="id">
                                 <span style="color: red;" id="id_name"></span>
                             </div>
                         </div>
@@ -585,7 +585,7 @@
         var departmentFormJson = $('#departmentForm').serializeArray();
         //构造请求参数
         var departmentSubmitJson = {
-            id: parseInt(departmentFormJson[0].value),
+            id: departmentFormJson[0].value,
             name: departmentFormJson[1].value,
             address: departmentFormJson[2].value,
             type: departmentFormJson[3].value,
